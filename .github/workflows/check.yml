@@ -1,0 +1,34 @@
+name: Verify handbook
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify foundations and integrated example
+        run: python scripts/verify_foundations.py
+      - name: Verify mechanics examples
+        run: python scripts/verify_mechanics.py
+      - name: Verify thermal and fluid examples
+        run: python scripts/verify_thermal.py
+      - name: Verify computational and systems examples
+        run: python scripts/verify_systems.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned equation renderer
+        run: npm install --prefix .tools --no-package-lock --ignore-scripts katex@0.19.1
+      - name: Check equation rendering syntax
+        run: node scripts/check_math.cjs
+      - name: Check books, links, and content structure
+        run: python scripts/check_repository.py
+      - name: Require synchronized generated books
+        run: git diff --exit-code

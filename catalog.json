@@ -1,0 +1,321 @@
+{
+  "edition": "2026-11-06",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "01 \u00b7 Units, dimensions, and engineering estimates",
+      "path": "chapters/01-units-and-dimensional-analysis.md",
+      "volume": "01-foundations",
+      "source_words": 1142,
+      "worked_examples": 2,
+      "display_equation_blocks": 2
+    },
+    {
+      "number": 2,
+      "title": "02 \u00b7 Engineering mathematics",
+      "path": "chapters/02-engineering-mathematics.md",
+      "volume": "01-foundations",
+      "source_words": 1101,
+      "worked_examples": 2,
+      "display_equation_blocks": 1
+    },
+    {
+      "number": 3,
+      "title": "03 \u00b7 Numerical methods and engineering computation",
+      "path": "chapters/03-numerical-methods.md",
+      "volume": "01-foundations",
+      "source_words": 1060,
+      "worked_examples": 2,
+      "display_equation_blocks": 2
+    },
+    {
+      "number": 4,
+      "title": "04. Engineering statics",
+      "path": "chapters/04-statics.md",
+      "volume": "02-mechanics-and-design",
+      "source_words": 1066,
+      "worked_examples": 2,
+      "display_equation_blocks": 11
+    },
+    {
+      "number": 5,
+      "title": "05. Engineering dynamics",
+      "path": "chapters/05-dynamics.md",
+      "volume": "02-mechanics-and-design",
+      "source_words": 1088,
+      "worked_examples": 2,
+      "display_equation_blocks": 12
+    },
+    {
+      "number": 6,
+      "title": "06. Strength of materials",
+      "path": "chapters/06-strength-of-materials.md",
+      "volume": "02-mechanics-and-design",
+      "source_words": 982,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 7,
+      "title": "07. Materials science and selection",
+      "path": "chapters/07-materials-science.md",
+      "volume": "02-mechanics-and-design",
+      "source_words": 1089,
+      "worked_examples": 2,
+      "display_equation_blocks": 12
+    },
+    {
+      "number": 8,
+      "title": "08. Thermodynamics",
+      "path": "chapters/08-thermodynamics.md",
+      "volume": "03-thermal-engineering",
+      "source_words": 1151,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 9,
+      "title": "09. Power cycles",
+      "path": "chapters/09-power-cycles.md",
+      "volume": "03-thermal-engineering",
+      "source_words": 1106,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 10,
+      "title": "10. Fluid mechanics",
+      "path": "chapters/10-fluid-mechanics.md",
+      "volume": "04-fluid-engineering",
+      "source_words": 1219,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 11,
+      "title": "11. Pipe flow and pumps",
+      "path": "chapters/11-pipe-flow-and-pumps.md",
+      "volume": "04-fluid-engineering",
+      "source_words": 1106,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 12,
+      "title": "12. Heat transfer",
+      "path": "chapters/12-heat-transfer.md",
+      "volume": "03-thermal-engineering",
+      "source_words": 1119,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 13,
+      "title": "13. Heat exchangers",
+      "path": "chapters/13-heat-exchangers.md",
+      "volume": "03-thermal-engineering",
+      "source_words": 1093,
+      "worked_examples": 2,
+      "display_equation_blocks": 14
+    },
+    {
+      "number": 14,
+      "title": "14. Turbomachinery",
+      "path": "chapters/14-turbomachinery.md",
+      "volume": "04-fluid-engineering",
+      "source_words": 1129,
+      "worked_examples": 2,
+      "display_equation_blocks": 14
+    },
+    {
+      "number": 15,
+      "title": "15. Refrigeration and HVAC",
+      "path": "chapters/15-refrigeration-and-hvac.md",
+      "volume": "03-thermal-engineering",
+      "source_words": 1152,
+      "worked_examples": 2,
+      "display_equation_blocks": 14
+    },
+    {
+      "number": 16,
+      "title": "16. Combustion and internal-combustion engines",
+      "path": "chapters/16-combustion-and-engines.md",
+      "volume": "03-thermal-engineering",
+      "source_words": 1151,
+      "worked_examples": 2,
+      "display_equation_blocks": 14
+    },
+    {
+      "number": 17,
+      "title": "17. Mass transfer",
+      "path": "chapters/17-mass-transfer.md",
+      "volume": "04-fluid-engineering",
+      "source_words": 1227,
+      "worked_examples": 2,
+      "display_equation_blocks": 15
+    },
+    {
+      "number": 18,
+      "title": "18. Machine elements and mechanical design",
+      "path": "chapters/18-machine-design.md",
+      "volume": "02-mechanics-and-design",
+      "source_words": 1137,
+      "worked_examples": 2,
+      "display_equation_blocks": 12
+    },
+    {
+      "number": 19,
+      "title": "19. Kinematics of machines and mechanisms",
+      "path": "chapters/19-mechanisms.md",
+      "volume": "02-mechanics-and-design",
+      "source_words": 1040,
+      "worked_examples": 2,
+      "display_equation_blocks": 12
+    },
+    {
+      "number": 20,
+      "title": "20. Mechanical vibrations",
+      "path": "chapters/20-vibrations.md",
+      "volume": "02-mechanics-and-design",
+      "source_words": 1002,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 21,
+      "title": "21. Manufacturing processes and production",
+      "path": "chapters/21-manufacturing.md",
+      "volume": "05-manufacturing",
+      "source_words": 1191,
+      "worked_examples": 2,
+      "display_equation_blocks": 12
+    },
+    {
+      "number": 22,
+      "title": "22. Metrology, uncertainty, and quality",
+      "path": "chapters/22-metrology.md",
+      "volume": "05-manufacturing",
+      "source_words": 1034,
+      "worked_examples": 2,
+      "display_equation_blocks": 12
+    },
+    {
+      "number": 23,
+      "title": "23. CAD, engineering drawing, and tolerances",
+      "path": "chapters/23-cad-and-engineering-drawing.md",
+      "volume": "05-manufacturing",
+      "source_words": 1147,
+      "worked_examples": 2,
+      "display_equation_blocks": 12
+    },
+    {
+      "number": 24,
+      "title": "24. Finite Element Analysis",
+      "path": "chapters/24-finite-element-analysis.md",
+      "volume": "06-computational-engineering",
+      "source_words": 1115,
+      "worked_examples": 2,
+      "display_equation_blocks": 11
+    },
+    {
+      "number": 25,
+      "title": "25. Computational Fluid Dynamics",
+      "path": "chapters/25-computational-fluid-dynamics.md",
+      "volume": "06-computational-engineering",
+      "source_words": 1112,
+      "worked_examples": 2,
+      "display_equation_blocks": 9
+    },
+    {
+      "number": 26,
+      "title": "26. Electrical Engineering for Mechanical Engineers",
+      "path": "chapters/26-electrical-engineering.md",
+      "volume": "07-electromechanical-systems",
+      "source_words": 995,
+      "worked_examples": 2,
+      "display_equation_blocks": 11
+    },
+    {
+      "number": 27,
+      "title": "27. Control Systems",
+      "path": "chapters/27-control-systems.md",
+      "volume": "07-electromechanical-systems",
+      "source_words": 987,
+      "worked_examples": 2,
+      "display_equation_blocks": 11
+    },
+    {
+      "number": 28,
+      "title": "28. Mechatronics and Instrumentation",
+      "path": "chapters/28-mechatronics.md",
+      "volume": "07-electromechanical-systems",
+      "source_words": 1054,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 29,
+      "title": "29. Robotics",
+      "path": "chapters/29-robotics.md",
+      "volume": "07-electromechanical-systems",
+      "source_words": 990,
+      "worked_examples": 2,
+      "display_equation_blocks": 11
+    },
+    {
+      "number": 30,
+      "title": "30. Engineering Design and Optimization",
+      "path": "chapters/30-design-and-optimization.md",
+      "volume": "06-computational-engineering",
+      "source_words": 1090,
+      "worked_examples": 2,
+      "display_equation_blocks": 11
+    },
+    {
+      "number": 31,
+      "title": "31. Reliability and Maintenance",
+      "path": "chapters/31-reliability-and-maintenance.md",
+      "volume": "08-engineering-practice",
+      "source_words": 999,
+      "worked_examples": 2,
+      "display_equation_blocks": 11
+    },
+    {
+      "number": 32,
+      "title": "32. Engineering Economics",
+      "path": "chapters/32-engineering-economics.md",
+      "volume": "08-engineering-practice",
+      "source_words": 1118,
+      "worked_examples": 2,
+      "display_equation_blocks": 11
+    },
+    {
+      "number": 33,
+      "title": "33. Energy Systems and Environmental Accounting",
+      "path": "chapters/33-energy-and-environment.md",
+      "volume": "08-engineering-practice",
+      "source_words": 1179,
+      "worked_examples": 2,
+      "display_equation_blocks": 10
+    },
+    {
+      "number": 34,
+      "title": "34 \u00b7 Tribology: friction, lubrication, and wear",
+      "path": "chapters/34-tribology.md",
+      "volume": "02-mechanics-and-design",
+      "source_words": 1215,
+      "worked_examples": 2,
+      "display_equation_blocks": 1
+    },
+    {
+      "number": 35,
+      "title": "35 \u00b7 Systems engineering and integrated design",
+      "path": "chapters/35-systems-engineering.md",
+      "volume": "08-engineering-practice",
+      "source_words": 1257,
+      "worked_examples": 2,
+      "display_equation_blocks": 1
+    }
+  ],
+  "source_words": 38643
+}
