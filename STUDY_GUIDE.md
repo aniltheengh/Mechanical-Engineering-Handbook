@@ -22,8 +22,11 @@ Keep a notebook with four columns: model, assumptions, calculation, and evidence
 | 8. Electrical and control | 26–29 | A sensor scaling calculation and a feedback or robot-kinematics model |
 | 9. Engineering decisions | 31–33, 35 | A reliability model, discounted cost comparison, energy boundary, and testable requirements |
 | 10. Integration | [Capstone](CAPSTONE.md) | A traceable calculation package with limitations and verification criteria |
+| 11. Specialist foundations | 36–41 | A crack-assessment model, composite stiffness bound, choked-flow calculation, sound-level sum, corrosion-loss estimate, and welding heat/load calculation |
 
 The [formula handbook](books/09-formula-handbook.md) is useful for revision after studying the corresponding theory. Before using a formula, identify the physical quantity, sign convention, units, assumptions, and limiting case. If any are unclear, return to the chapter.
+
+Before chapters 36–37, study stress/strain and material behaviour in 06–07. Before 38, study thermodynamics and fluid mechanics in 08 and 10. Vibration and wave concepts support 39. Material behaviour, chemistry, heat transfer, manufacturing, and stress analysis support 40–41. The specialist chapters make modelling boundaries explicit; a worked introductory calculation is not an integrity or fabrication acceptance procedure.
 
 ## For a plant/piping designer
 

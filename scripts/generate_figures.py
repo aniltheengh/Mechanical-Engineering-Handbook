@@ -52,7 +52,32 @@ def draw_error(ax):
     ax.set(xlabel="Time step h (s)",ylabel="Error at t = 1 s (K)",title="Refinement reveals convergence order")
     ax.legend(fontsize=9)
 
-drawers=[("pump-operating-point",draw_pump),("thermal-response",draw_cooling),("vibration-response",draw_vibration),("numerical-convergence",draw_error)]
+def draw_fracture(ax):
+    crack_mm=np.linspace(.1,50,401)
+    geometry=1.12; stress_mpa=100; toughness=40
+    intensity=geometry*stress_mpa*np.sqrt(np.pi*crack_mm/1000)
+    critical_mm=1000*(toughness/(geometry*stress_mpa))**2/np.pi
+    ax.plot(crack_mm,intensity,color=blue,lw=2.4,label="Assumed constant Y = 1.12, stress = 100 MPa")
+    ax.axhline(toughness,color=orange,ls="--",label="Assumed toughness = 40 MPa √m")
+    ax.scatter([critical_mm],[toughness],c=green,zorder=5)
+    ax.annotate(f"Model intersection\na = {critical_mm:.2f} mm",(critical_mm,toughness),xytext=(12,45),arrowprops={"arrowstyle":"->"})
+    ax.set(xlabel="Crack size parameter a (mm)",ylabel=r"Mode-I stress intensity $K_I$ (MPa $\sqrt{\mathrm{m}}$)",title="A longer crack raises stress intensity",ylim=(0,53))
+    ax.legend(loc="lower right",fontsize=9)
+
+def draw_acoustics(ax):
+    distance=np.geomspace(1,16,300)
+    single=80-20*np.log10(distance)
+    double=single+10*np.log10(2)
+    ax.semilogx(distance,single,color=blue,lw=2.4,label="One source: 80 dB at 1 m")
+    ax.semilogx(distance,double,color=orange,lw=2.4,label="Two equal incoherent sources")
+    level=80+10*np.log10(2)-20*np.log10(5)
+    ax.scatter([5],[level],c=green,zorder=5)
+    ax.annotate(f"Two sources at 5 m\n{level:.3f} dB",(5,level),xytext=(1.8,58),arrowprops={"arrowstyle":"->"})
+    ax.set(xlabel="Equal distance from sources r (m)",ylabel="Sound pressure level (dB re 20 μPa)",title="Distance and source addition are logarithmic",ylim=(53,86))
+    ax.set_xticks([1,2,4,8,16],labels=["1","2","4","8","16"])
+    ax.legend(fontsize=9)
+
+drawers=[("pump-operating-point",draw_pump),("thermal-response",draw_cooling),("vibration-response",draw_vibration),("numerical-convergence",draw_error),("fracture-intensity",draw_fracture),("sound-distance",draw_acoustics)]
 for name,draw in drawers:
     fig,ax=plt.subplots(figsize=(8,5),layout="constrained")
     draw(ax);ax.grid(alpha=.2)
@@ -61,9 +86,9 @@ for name,draw in drawers:
     svg_path=OUT/f"{name}.svg"
     svg_path.write_text("\n".join(line.rstrip() for line in svg_path.read_text(encoding="utf-8").splitlines())+"\n",encoding="utf-8",newline="\n")
     plt.close(fig)
-fig,axes=plt.subplots(2,2,figsize=(14,9),layout="constrained")
+fig,axes=plt.subplots(3,2,figsize=(14,13.5),layout="constrained")
 for ax,(_,draw) in zip(axes.flat,drawers): draw(ax);ax.grid(alpha=.2)
 fig.suptitle("Mechanical Engineering Handbook · Quantitative visual guide",fontsize=19)
 fig.savefig(OUT/"visual-overview.png",dpi=140)
 plt.close(fig)
-print("Generated 4 PNG/SVG figure pairs and one overview PNG.")
+print(f"Generated {len(drawers)} PNG/SVG figure pairs and one overview PNG.")

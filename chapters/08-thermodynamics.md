@@ -96,7 +96,7 @@ $$
 
 ## Derivation
 
-Derive the ideal-gas isentropic temperature relation instead of memorizing its exponent. For a simple compressible ideal gas, $Tds=dh-vdp$. Substitute $dh=c_p,dT$ and $v=RT/p$, then divide by temperature:
+Derive the ideal-gas isentropic temperature relation instead of memorizing its exponent. For a simple compressible ideal gas, $Tds=dh-vdp$. Substitute $dh=c_p\,dT$ and $v=RT/p$, then divide by temperature:
 
 $$
 ds=c_p\frac{dT}{T}-R\frac{dp}{p}.

@@ -1,5 +1,7 @@
 {
-  "edition": "2026-11-06",
+  "edition": "2026-11-07",
+  "chapter_count": 41,
+  "theory_volumes": 9,
   "chapters": [
     {
       "number": 1,
@@ -315,7 +317,61 @@
       "source_words": 1257,
       "worked_examples": 2,
       "display_equation_blocks": 1
+    },
+    {
+      "number": 36,
+      "title": "36 \u00b7 Fracture mechanics and fatigue crack growth",
+      "path": "chapters/36-fracture-mechanics.md",
+      "volume": "10-specialist-foundations",
+      "source_words": 1527,
+      "worked_examples": 2,
+      "display_equation_blocks": 3
+    },
+    {
+      "number": 37,
+      "title": "37 \u00b7 Composite materials and laminated plates",
+      "path": "chapters/37-composite-materials.md",
+      "volume": "10-specialist-foundations",
+      "source_words": 1530,
+      "worked_examples": 2,
+      "display_equation_blocks": 3
+    },
+    {
+      "number": 38,
+      "title": "38. Compressible flow",
+      "path": "chapters/38-compressible-flow.md",
+      "volume": "10-specialist-foundations",
+      "source_words": 1556,
+      "worked_examples": 2,
+      "display_equation_blocks": 14
+    },
+    {
+      "number": 39,
+      "title": "39. Engineering acoustics",
+      "path": "chapters/39-engineering-acoustics.md",
+      "volume": "10-specialist-foundations",
+      "source_words": 1639,
+      "worked_examples": 2,
+      "display_equation_blocks": 15
+    },
+    {
+      "number": 40,
+      "title": "40. Corrosion Engineering",
+      "path": "chapters/40-corrosion-engineering.md",
+      "volume": "10-specialist-foundations",
+      "source_words": 1682,
+      "worked_examples": 2,
+      "display_equation_blocks": 13
+    },
+    {
+      "number": 41,
+      "title": "41. Welding Engineering",
+      "path": "chapters/41-welding-engineering.md",
+      "volume": "10-specialist-foundations",
+      "source_words": 1728,
+      "worked_examples": 2,
+      "display_equation_blocks": 15
     }
   ],
-  "source_words": 38643
+  "source_words": 48305
 }

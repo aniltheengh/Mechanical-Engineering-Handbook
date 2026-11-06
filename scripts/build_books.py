@@ -1,4 +1,4 @@
-"""Compile editable Markdown chapters into eight books and a formula reference.
+"""Compile editable Markdown chapters into subject books and a formula reference.
 
 Standard library only. Chapters are authoritative; books and catalog are generated.
 """
@@ -7,6 +7,7 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+EDITION = "2026-11-07"
 VOLUMES = [
     ("01-foundations", "Engineering foundations", [1, 2, 3]),
     ("02-mechanics-and-design", "Mechanics, materials, and machine design", [4, 5, 6, 7, 18, 19, 20, 34]),
@@ -16,6 +17,7 @@ VOLUMES = [
     ("06-computational-engineering", "Computational engineering and optimization", [24, 25, 30]),
     ("07-electromechanical-systems", "Electrical, control, mechatronics, and robotics", [26, 27, 28, 29]),
     ("08-engineering-practice", "Reliability, economics, energy, and systems", [31, 32, 33, 35]),
+    ("10-specialist-foundations", "Specialist foundations in mechanical engineering", [36, 37, 38, 39, 40, 41]),
 ]
 
 
@@ -33,15 +35,16 @@ def relocate_links(text):
 def build():
     books = ROOT / "books"
     books.mkdir(exist_ok=True)
-    files = {int(p.name[:2]): p for p in sorted((ROOT / "chapters").glob("[0-9][0-9]-*.md"))}
+    paths = sorted((ROOT / "chapters").glob("[0-9][0-9]-*.md"))
+    files = {int(p.name[:2]): p for p in paths}
     expected = [n for _, _, nums in VOLUMES for n in nums]
-    if sorted(files) != list(range(1, 36)) or sorted(expected) != list(range(1, 36)):
-        raise SystemExit("Expected exactly the 35 unique chapters before compiling.")
+    if len(expected) != len(set(expected)) or len(paths) != len(files) or sorted(files) != sorted(expected):
+        raise SystemExit("Chapter files and unique volume assignments must match exactly before compiling.")
     catalog = []
-    index = ["# Contents", "", "[Start page](README.md) · [Study route](STUDY_GUIDE.md) · [Coverage and limits](COVERAGE.md)", ""]
-    formulas = ["# Mechanical Engineering Formula Handbook", "", "Generated from the 35 chapter formula sections. Read the linked chapter for derivations, examples, and additional assumptions. Symbols are local to each chapter; SI is the default. This reference does not supply code-compliant design rules or proprietary property tables.", ""]
+    index = ["# Contents", "", "[Start page](README.md) · [Formula handbook](books/09-formula-handbook.md) · [Study route](STUDY_GUIDE.md) · [Coverage and limits](COVERAGE.md)", ""]
+    formulas = ["# Mechanical Engineering Formula Handbook", "", f"Generated from the {len(files)} chapter formula sections. Read the linked chapter for derivations, examples, and additional assumptions. Symbols are local to each chapter; SI is the default. This reference does not supply code-compliant design rules or proprietary property tables.", ""]
     for slug, title, nums in VOLUMES:
-        book = [f"# {title}", "", "Mechanical Engineering Handbook · First edition · 2026-11-06", "", "An original, AI-assisted educational reference. Maintained by aniltheengh. See [coverage](../COVERAGE.md), [validation](../VALIDATION.md), and [license](../LICENSE.md).", "", "## Chapters", ""]
+        book = [f"# {title}", "", f"Mechanical Engineering Handbook · Expanded edition · {EDITION}", "", "An original, AI-assisted educational reference. Maintained by aniltheengh. See [coverage](../COVERAGE.md), [validation](../VALIDATION.md), and [license](../LICENSE.md).", "", "## Chapters", ""]
         for n in nums:
             p = files[n]
             txt = p.read_text(encoding="utf-8")
@@ -65,10 +68,10 @@ def build():
         index.append("")
         (books / f"{slug}.md").write_text("\n".join(book), encoding="utf-8")
     catalog.sort(key=lambda x: x["number"])
-    (ROOT / "catalog.json").write_text(json.dumps({"edition": "2026-11-06", "chapters": catalog, "source_words": sum(x["source_words"] for x in catalog)}, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "catalog.json").write_text(json.dumps({"edition": EDITION, "chapter_count": len(catalog), "theory_volumes": len(VOLUMES), "chapters": catalog, "source_words": sum(x["source_words"] for x in catalog)}, indent=2) + "\n", encoding="utf-8")
     (ROOT / "CONTENTS.md").write_text("\n".join(index), encoding="utf-8")
     (books / "09-formula-handbook.md").write_text("\n".join(formulas), encoding="utf-8")
-    print(f"Built 8 theory volumes and 1 formula handbook from 35 chapters; {sum(x['source_words'] for x in catalog):,} source words (including equations and references).")
+    print(f"Built {len(VOLUMES)} theory volumes and 1 formula handbook from {len(files)} chapters; {sum(x['source_words'] for x in catalog):,} source words (including equations and references).")
 
 
 if __name__ == "__main__":

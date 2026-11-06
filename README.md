@@ -1,10 +1,12 @@
 # Mechanical Engineering Handbook
 
-**Theory, formulas, derivations, and worked problems across 35 mechanical engineering subjects.**
+**Theory, formulas, derivations, and worked problems across 41 mechanical engineering subjects.**
 
-An original, editable, AI-assisted educational reference maintained by **aniltheengh**. The first edition contains eight theory volumes, a consolidated formula handbook, 70 worked examples, 105 exercises with explained solutions, and an integrated water-pumping capstone. Chapters use SI units and define assumptions and model limits. Publication date: **6 November 2026**.
+An original, editable, AI-assisted educational reference maintained by **aniltheengh**. The expanded edition contains nine theory volumes, a consolidated formula handbook, 82 worked examples, 123 exercises with explained solutions, and an integrated water-pumping capstone. Chapters use SI units and define assumptions and model limits. First published **6 November 2026**; expanded **7 November 2026**.
 
 **[Read the full contents](CONTENTS.md) · [Open the formula handbook](books/09-formula-handbook.md) · [Find full open textbooks](references/OPEN_LIBRARY.md) · [Start learning](STUDY_GUIDE.md)**
+
+The latest expansion adds six specialist foundations with new worked calculations and diagrams. See [what changed](CHANGELOG.md).
 
 ## The books
 
@@ -19,6 +21,7 @@ An original, editable, AI-assisted educational reference maintained by **anilthe
 | 7. Electromechanical systems | Electrical engineering, controls, mechatronics, robotics | [Theory book](books/07-electromechanical-systems.md) |
 | 8. Engineering practice | Reliability, maintenance, economics, energy/environment, systems engineering | [Theory book](books/08-engineering-practice.md) |
 | 9. Formula handbook | Formula sections gathered from every chapter | [Formula reference](books/09-formula-handbook.md) |
+| 10. Specialist foundations | Fracture mechanics, composites, compressible flow, acoustics, corrosion, welding | [Theory book](books/10-specialist-foundations.md) |
 
 ## What every chapter contains
 
@@ -46,6 +49,9 @@ python scripts/verify_foundations.py
 python scripts/verify_mechanics.py
 python scripts/verify_thermal.py
 python scripts/verify_systems.py
+python scripts/verify_advanced_mechanics.py
+python scripts/verify_gas_acoustics.py
+python scripts/verify_corrosion_welding.py
 python scripts/build_books.py
 python scripts/check_repository.py
 ```

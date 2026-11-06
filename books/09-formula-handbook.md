@@ -1,6 +1,6 @@
 # Mechanical Engineering Formula Handbook
 
-Generated from the 35 chapter formula sections. Read the linked chapter for derivations, examples, and additional assumptions. Symbols are local to each chapter; SI is the default. This reference does not supply code-compliant design rules or proprietary property tables.
+Generated from the 41 chapter formula sections. Read the linked chapter for derivations, examples, and additional assumptions. Symbols are local to each chapter; SI is the default. This reference does not supply code-compliant design rules or proprietary property tables.
 
 ## 01 · Units, dimensions, and engineering estimates
 
@@ -2598,3 +2598,516 @@ State timing, included costs, and currency basis. This metric alone does not rep
 12. For a finish-to-start activity network without resource constraints, earliest finish is $EF_i=\max_{j\in\mathrm{pred}(i)}EF_j+d_i$. Start activities use earliest start zero. Duration $d_i$ and finish times use the same time unit.
 
 These equations assist decisions; none replaces the judgement needed to define requirements, identify credible failure modes, or decide whether evidence is sufficient.
+
+## 36 · Fracture mechanics and fatigue crack growth
+
+[Full chapter](../chapters/36-fracture-mechanics.md)
+
+1. The leading mode-I near-tip elastic field has the form $\sigma_{ij}=K_I f_{ij}(\theta)/\sqrt{2\pi r}$ plus less singular terms. Here $r$ is tip distance in m and $f_{ij}$ is a dimensionless angular function. The field is used outside the nonlinear process zone and inside the region dominated by the leading term.
+2. A common geometry representation is $K_I=Y\sigma\sqrt{\pi a}$, with nominal stress $\sigma$ in Pa, defined crack-size parameter $a$ in m, and dimensionless geometry factor $Y$. The result is Pa $\sqrt{\mathrm m}$. For an infinite plate with a central through crack, $a$ is half the total crack length and $Y=1$.
+3. A constant-$Y$ critical-stress estimate is $\sigma_c=K_c/(Y\sqrt{\pi a})$. A compatible resistance $K_c$ and valid LEFM model are required; the equation is not a general acceptance rule.
+4. With the same restrictions, $a_c=(K_c/(Y\sigma))^2/\pi$. If $Y$ depends appreciably on $a$, solve the full geometry-dependent equation instead.
+5. For mechanical potential energy $\Pi$, $G=-\partial\Pi/\partial A_c$, where $A_c$ is projected crack-plane area under a declared loading convention. Units are J/m², equivalent to N/m. This convention is distinct from counting the combined area of both newly created faces.
+6. For isotropic mode-I linear elasticity,
+
+$$
+G=\frac{K_I^2}{E'},\qquad E'=E\quad\text{(plane stress)},\qquad E'=\frac{E}{1-\nu^2}\quad\text{(plane strain)}.
+$$
+
+Here $E$ is Young's modulus in Pa and $\nu$ is Poisson's ratio. A compatible critical value satisfies $G_c=K_c^2/E'$.
+7. Approximate forward plastic-zone estimates are $r_p\approx(K_I/\sigma_Y)^2/(2\pi)$ for plane stress and $r_p\approx(K_I/\sigma_Y)^2/(6\pi)$ for plane strain. They are first-order estimates, not general crack-tip plasticity solutions; $\sigma_Y$ is yield stress in matching stress units.
+8. For a nonzero maximum intensity, the cycle ratio is $R_K=K_{\min}/K_{\max}$ and the nominal range is $\Delta K=K_{\max}-K_{\min}$. Closure can make an effective opening range differ from this nominal range.
+9. With constant geometry and proportional tensile loading, $\Delta K=Y\Delta\sigma\sqrt{\pi a}$.
+10. Paris law is $da/dN=C(\Delta K)^m$, where $N$ counts cycles and $C,m$ are fitted for stated conditions. The units of $C$ depend on both $m$ and the stress-intensity unit.
+11. If $Y$, $\Delta\sigma$, $C$, and $m$ remain constant, define $B=C(Y\Delta\sigma\sqrt\pi)^m$. For $m\ne2$,
+
+$$
+N_f-N_i=\frac{a_f^{1-m/2}-a_i^{1-m/2}}{B(1-m/2)}.
+$$
+
+12. For $m=2$, the corresponding integral is $(N_f-N_i)=\ln(a_f/a_i)/B$.
+
+MPa $\sqrt{\mathrm m}$ is convenient in the examples. Convert to Pa $\sqrt{\mathrm m}$ before using a modulus in Pa. A Paris coefficient calibrated with MPa cannot be retained unchanged after replacing the intensity unit by Pa.
+
+## 37 · Composite materials and laminated plates
+
+[Full chapter](../chapters/37-composite-materials.md)
+
+Use constituent volume fractions $V_f,V_m$, densities $\rho_f,\rho_m$ in kg/m³, and elastic moduli in Pa. The subscript f denotes fibre and m denotes matrix; the symbol $m$ elsewhere may mean mass, so read local definitions.
+
+1. With no void fraction, $V_f+V_m=1$ and $\rho_c=V_f\rho_f+V_m\rho_m$. Void-containing mixtures require another constituent fraction and an appropriate density model.
+2. Equal longitudinal strain gives $E_L=V_fE_f+V_mE_m$ for the simple continuous parallel model.
+3. The equal-stress transverse series model gives $1/E_T=V_f/E_f+V_m/E_m$.
+4. Under equal axial strain $\epsilon$, constituent stresses are $\sigma_f=E_f\epsilon$, $\sigma_m=E_m\epsilon$, and macroscopic stress is $\sigma_c=V_f\sigma_f+V_m\sigma_m$.
+5. Orthotropic reciprocity requires $\nu_{12}/E_1=\nu_{21}/E_2$. Here $\nu_{12}=-\epsilon_2/\epsilon_1$ under uniaxial stress in direction 1, and the reverse ratio defines $\nu_{21}$.
+6. The lamina plane-stress compliance relation is
+
+$$
+\begin{bmatrix}\epsilon_1\\\epsilon_2\\\gamma_{12}\end{bmatrix}
+=\begin{bmatrix}1/E_1&-\nu_{21}/E_2&0\\-\nu_{12}/E_1&1/E_2&0\\0&0&1/G_{12}\end{bmatrix}
+\begin{bmatrix}\sigma_1\\\sigma_2\\\tau_{12}\end{bmatrix}.
+$$
+
+Engineering shear strain $\gamma_{12}$ is twice the tensor shear strain; use that convention consistently in transformations.
+7. Let $d=1-\nu_{12}\nu_{21}$. The reduced stiffness terms are $Q_{11}=E_1/d$, $Q_{22}=E_2/d$, $Q_{12}=\nu_{12}E_2/d$, and $Q_{66}=G_{12}$. They have units Pa, with $\boldsymbol\sigma=\mathbf Q\boldsymbol\epsilon$.
+8. In global axes, $\boldsymbol\sigma_{xy}=\overline{\mathbf Q}\boldsymbol\epsilon_{xy}$. At 90 degrees, $\overline Q_{11}=Q_{22}$, $\overline Q_{22}=Q_{11}$, $\overline Q_{12}=Q_{12}$, and $\overline Q_{66}=Q_{66}$; the 16 and 26 terms vanish for a specially orthotropic ply at 0 or 90 degrees.
+9. With the convention $\boldsymbol\epsilon(z)=\boldsymbol\epsilon^0+z\boldsymbol\kappa$, layer boundaries $z_k$ measured from the midplane give
+
+$$
+\mathbf A=\sum_k\overline{\mathbf Q}_k(z_k-z_{k-1}),\quad
+\mathbf B=\frac12\sum_k\overline{\mathbf Q}_k(z_k^2-z_{k-1}^2),\quad
+\mathbf D=\frac13\sum_k\overline{\mathbf Q}_k(z_k^3-z_{k-1}^3).
+$$
+
+The units are N/m, N, and N m respectively.
+10. Without thermal or other initial strains,
+
+$$
+\begin{bmatrix}\mathbf N\\\mathbf M\end{bmatrix}
+=\begin{bmatrix}\mathbf A&\mathbf B\\\mathbf B&\mathbf D\end{bmatrix}
+\begin{bmatrix}\boldsymbol\epsilon^0\\\boldsymbol\kappa\end{bmatrix}.
+$$
+
+Membrane resultant $\mathbf N$ is force per width in N/m, moment resultant $\mathbf M$ is moment per width in N, and curvature is in m⁻¹. The bending sign follows the chosen $z$ and curvature convention.
+11. Layer stress recovery is $\boldsymbol\sigma_k(z)=\overline{\mathbf Q}_k[\boldsymbol\epsilon^0+z\boldsymbol\kappa-\overline{\boldsymbol\alpha}_k\Delta T]$ when a compatible thermal expansion vector is included. Moisture and other initial strains need additional terms.
+12. Simple maximum-stress screening compares local $\sigma_1,\sigma_2,\tau_{12}$ with the corresponding tensile/compressive and shear allowables. For example, $-X_c\leq\sigma_1\leq X_t$ and $|\tau_{12}|\leq S$; the transverse pair uses $Y_t,Y_c$. This separate-component model omits interactions and delamination.
+
+## 38. Compressible flow
+
+[Full chapter](../chapters/38-compressible-flow.md)
+
+Use absolute pressure $p$ in Pa, temperature $T$ in K, density $\rho$ in kg/m3, gas-specific $R$ in J/(kg K), speed $V$ in m/s, area $A$ in m2 and mass flow $\dot m$ in kg/s. Subscript 0 denotes stagnation conditions; an asterisk denotes a sonic reference state. Unless stated otherwise, the gas is ideal with constant $\gamma=c_p/c_v$ and $c_p=\gamma R/(\gamma-1)$.
+
+1. State, sound speed and Mach number:
+
+$$
+p=\rho RT,\qquad a=\sqrt{\gamma RT},\qquad M=V/a.
+$$
+
+2. Steady one-dimensional conservation of mass:
+
+$$
+\dot m=\rho VA.
+$$
+
+3. Adiabatic flow energy without shaft work or elevation change:
+
+$$
+h_0=h+\frac{V^2}{2},\qquad T_0=T+\frac{V^2}{2c_p}.
+$$
+
+4. Static-to-stagnation relations, with pressure and density referenced by isentropic deceleration:
+
+$$
+\frac{T_0}{T}=1+\frac{\gamma-1}{2}M^2,\qquad \frac{p_0}{p}=\left(\frac{T_0}{T}\right)^{\gamma/(\gamma-1)},\qquad \frac{\rho_0}{\rho}=\left(\frac{T_0}{T}\right)^{1/(\gamma-1)}.
+$$
+
+5. Area-velocity relation for smooth quasi-one-dimensional isentropic flow:
+
+$$
+\frac{dA}{A}=(M^2-1)\frac{dV}{V}.
+$$
+
+6. Area-Mach relation within one isentropic region:
+
+$$
+\frac{A}{A^*}=\frac1M\left[\frac2{\gamma+1}\left(1+\frac{\gamma-1}{2}M^2\right)\right]^{(\gamma+1)/[2(\gamma-1)]}.
+$$
+
+An area ratio greater than one has both a subsonic and a supersonic mathematical solution.
+
+7. Mass-flow function:
+
+$$
+\dot m=\frac{Ap_0}{\sqrt{T_0}}\sqrt{\frac\gamma R}\,M\left(1+\frac{\gamma-1}{2}M^2\right)^{-(\gamma+1)/[2(\gamma-1)]}.
+$$
+
+8. Sonic temperature and pressure ratios:
+
+$$
+\frac{T^*}{T_0}=\frac2{\gamma+1},\qquad \frac{p^*}{p_0}=\left(\frac2{\gamma+1}\right)^{\gamma/(\gamma-1)}.
+$$
+
+9. Ideal choked mass flow, with sonic throat area $A^*$:
+
+$$
+\dot m^*=\frac{A^*p_0}{\sqrt{T_0}}\sqrt{\frac\gamma R}\left(\frac2{\gamma+1}\right)^{(\gamma+1)/[2(\gamma-1)]}.
+$$
+
+A measured discharge coefficient can modify this ideal result for a specified device; it must not be invented or transferred between unrelated geometries.
+
+10. Normal-shock downstream Mach number, upstream $M_1>1$:
+
+$$
+M_2^2=\frac{1+\frac{\gamma-1}{2}M_1^2}{\gamma M_1^2-\frac{\gamma-1}{2}}.
+$$
+
+11. Normal-shock static-property ratios:
+
+$$
+\frac{p_2}{p_1}=1+\frac{2\gamma}{\gamma+1}(M_1^2-1),\qquad \frac{\rho_2}{\rho_1}=\frac{(\gamma+1)M_1^2}{2+(\gamma-1)M_1^2},\qquad \frac{T_2}{T_1}=\frac{p_2/p_1}{\rho_2/\rho_1}.
+$$
+
+12. Normal-shock stagnation-pressure ratio:
+
+$$
+\frac{p_{02}}{p_{01}}=\frac{p_2}{p_1}\left[\frac{1+\frac{\gamma-1}{2}M_2^2}{1+\frac{\gamma-1}{2}M_1^2}\right]^{\gamma/(\gamma-1)}.
+$$
+
+13. Entropy change for a perfect gas, and its shock-specific reduction:
+
+$$
+s_2-s_1=c_p\ln(T_2/T_1)-R\ln(p_2/p_1)=-R\ln(p_{02}/p_{01})>0.
+$$
+
+The last equality uses equal stagnation temperatures across an adiabatic normal shock.
+
+14. Mach angle for infinitesimal disturbances in a uniform supersonic stream:
+
+$$
+\mu=\sin^{-1}(1/M).
+$$
+
+This is not the angle of an arbitrary finite-strength oblique shock.
+
+## 39. Engineering acoustics
+
+[Full chapter](../chapters/39-engineering-acoustics.md)
+
+Let $p'$ be acoustic pressure in Pa, $u'$ particle velocity in m/s, $\rho_0$ mean density in kg/m3, $c$ sound speed in m/s and $W_a$ acoustic power in W. These equations assume linear acoustics unless specified otherwise.
+
+1. Small pressure perturbation and sound speed:
+
+$$
+p_{total}=p_0+p',\qquad c=\sqrt{K_s/\rho_0}=\sqrt{\gamma RT}\quad\text{for a perfect gas}.
+$$
+
+$K_s$ is the isentropic bulk modulus in Pa. The gas formula uses absolute temperature in K.
+
+2. Homogeneous lossless wave equation with no mean flow:
+
+$$
+\nabla^2p'-\frac1{c^2}\frac{\partial^2p'}{\partial t^2}=0.
+$$
+
+3. Sinusoidal wave, rms amplitude and wavelength:
+
+$$
+p'=\hat p\cos(\omega t-kx+\theta),\qquad p_{rms}=\frac{\hat p}{\sqrt2},\qquad \lambda=\frac cf,\qquad k=\frac{2\pi}{\lambda}.
+$$
+
+$\omega=2\pi f$ in rad/s; $f$ is frequency in Hz. The rms conversion applies to a sinusoid.
+
+4. Specific acoustic impedance and progressive plane-wave impedance:
+
+$$
+Z=\frac{\tilde p}{\tilde u},\qquad Z_0=\rho_0c.
+$$
+
+Tildes denote complex amplitudes; impedance has units Pa s/m. General $Z$ can be complex, while $Z_0$ here is real and positive for a wave traveling in the positive direction.
+
+5. Time-averaged intensity and its plane-wave reduction:
+
+$$
+I=\langle p'u'\rangle=p_{rms}u_{rms}\cos\phi,\qquad I=\frac{p_{rms}^2}{\rho_0c}\quad\text{for a progressive plane wave}.
+$$
+
+$\phi$ is pressure-velocity phase difference for single-frequency harmonic quantities. For a general broadband signal, use the time average or a suitable cross-spectral calculation rather than assigning one phase angle to all frequencies. Intensity is directional and measured in W/m2.
+
+6. Airborne sound-pressure level:
+
+$$
+L_p=20\log_{10}\left(\frac{p_{rms}}{p_{ref}}\right),\qquad p_{ref}=20\times10^{-6}\ \mathrm{Pa}.
+$$
+
+7. Intensity and sound-power levels, for positive scalar magnitudes:
+
+$$
+L_I=10\log_{10}(I/I_{ref}),\quad I_{ref}=10^{-12}\ \mathrm{W/m^2},\qquad L_W=10\log_{10}(W_a/W_{ref}),\quad W_{ref}=10^{-12}\ \mathrm W.
+$$
+
+8. Ideal free-field intensity from a compact source:
+
+$$
+I(r)=\frac{Q_dW_a}{4\pi r^2}.
+$$
+
+$Q_d$ is a dimensionless directivity factor in the observation direction; $Q_d=1$ for an omnidirectional source. The model excludes reflections and atmospheric attenuation.
+
+9. Pressure-level change in the same free-field far-field direction:
+
+$$
+L_p(r_2)-L_p(r_1)=-20\log_{10}(r_2/r_1).
+$$
+
+10. Addition of mutually incoherent pressure levels with the same reference and bandwidth:
+
+$$
+L_{p,total}=10\log_{10}\left(\sum_i10^{L_{p,i}/10}\right).
+$$
+
+11. Coherent pressure addition instead uses complex amplitudes:
+
+$$
+\tilde p_{total}=\sum_i\tilde p_i.
+$$
+
+Two equal in-phase sinusoidal pressures increase level by $20\log_{10}2=6.0206$ dB; two equal incoherent sources increase it by $10\log_{10}2=3.0103$ dB.
+
+12. Normal-incidence pressure reflection at a boundary between two lossless fluid half-spaces:
+
+$$
+r_p=\frac{Z_2-Z_1}{Z_2+Z_1},\qquad t_p=\frac{2Z_2}{Z_2+Z_1}.
+$$
+
+$r_p$ and $t_p$ relate reflected and transmitted pressure amplitudes to incident pressure. They are not power fractions.
+
+13. Corresponding energy fractions for real positive impedances:
+
+$$
+\mathcal R=r_p^2,\qquad \tau=\frac{Z_1}{Z_2}t_p^2=\frac{4Z_1Z_2}{(Z_1+Z_2)^2},\qquad \mathcal R+\tau=1.
+$$
+
+14. Transmission loss and absorption bookkeeping:
+
+$$
+TL=10\log_{10}(W_{incident}/W_{transmitted})=-10\log_{10}\tau,\qquad \alpha=1-\mathcal R-\tau.
+$$
+
+The absorption relation is for a passive boundary with all reflected and transmitted channels accounted for. Absorption and transmission loss measure different outcomes.
+
+15. Ideal longitudinal duct resonances, neglecting end corrections and losses:
+
+$$
+f_n=\frac{nc}{2L}\quad\text{open-open},\qquad f_n=\frac{(2n-1)c}{4L}\quad\text{closed-open},\qquad n=1,2,3,\ldots
+$$
+
+An ideal open end is a pressure node; an ideal rigid closed end is a particle-velocity node.
+
+## 40. Corrosion Engineering
+
+[Full chapter](../chapters/40-corrosion-engineering.md)
+
+Use time $t$ in s, current $I$ in A, charge $q$ in C, exposed area $A_e$ in $\mathrm{m^2}$, density $\rho$ in $\mathrm{kg/m^3}$, and metal molar mass $M$ in kg/mol. $F\approx96485.33212\ \mathrm{C/mol}$ is the Faraday constant, $R=8.314462618\ \mathrm{J/(mol\,K)}$, and $z$ is the electron count per stated metal-oxidation reaction.
+
+**1. Accumulated charge:**
+
+$$
+q=\int_0^t I(\tau)\,d\tau;\qquad q=It\quad\text{for constant current}.
+$$
+
+**2. Mean anodic current density:**
+
+$$
+i_a=I_a/A_e.
+$$
+
+Use the anodic partial current and its participating area, not an unexplained net external current.
+
+**3. Faraday metal-loss relation:**
+
+$$
+\Delta m=\eta_F\frac{Mq}{zF}.
+$$
+
+$\eta_F$ is the fraction of the specified charge attributed to that dissolution reaction. Set it to one only when that assumption is justified. Alloy dissolution may need separate species and valence accounting.
+
+**4. Average depth removed from one stated exposed surface area:**
+
+$$
+\bar d=\frac{\Delta m}{\rho A_e}.
+$$
+
+If both faces of a thin coupon are exposed, include both in $A_e$. Their individual penetration is different from the total reduction of plate thickness.
+
+**5. Average measured thinning rate and conversion:**
+
+$$
+\bar c=\frac{\bar d}{t},\qquad c_{\rm mm/year}=\bar c_{\rm m/s}(1000)(365\times24\times3600).
+$$
+
+The “year” here is explicitly 365 days. Extrapolation assumes unchanged exposure and mechanism.
+
+**6. Convenient coupon units, with cleaned metal mass loss:**
+
+$$
+c_{\rm mm/year}=\frac{87.6\,\Delta m_{\rm mg}}{\rho_{\rm g/cm^3}A_{\rm cm^2}t_{\rm h}}.
+$$
+
+This is a unit-conversion formula, not an alternative physical law. Cleaning must remove corrosion products without counting unrelated metal removal as service loss.
+
+**7. Uniform electrochemical penetration rate:**
+
+$$
+\dot d=\eta_F\frac{M i_a}{zF\rho}.
+$$
+
+The result is m/s. Local current concentration invalidates interpreting this mean as maximum penetration.
+
+**8. Reaction quotient and Nernst equation:**
+
+$$
+\mathcal Q=\prod_j a_j^{\nu_j},\qquad E_{\rm eq}=E^\circ-\frac{RT}{zF}\ln\mathcal Q.
+$$
+
+$a_j$ are dimensionless activities and $\nu_j$ are positive for products and negative for reactants. Use a consistently written reduction half-reaction or complete cell reaction. Pure solid phases have unit activity in their standard states. Potential is in V; half-cell potentials require a stated reference. The [IUPAC definition](https://goldbook.iupac.org/terms/view/09068/plain) specifies equilibrium and activities.
+
+**9. At 298.15 K, base-ten form:**
+
+$$
+E_{\rm eq}=E^\circ-\frac{0.05915935\ \mathrm V}{z}\log_{10}\mathcal Q.
+$$
+
+The numerical coefficient changes with temperature. Concentration ratios replace activities only under an appropriate ideal or calibrated approximation.
+
+**10. Complete-cell reaction free energy:**
+
+$$
+\Delta_rG=-zFE_{\rm cell}.
+$$
+
+This gives J per mole of reaction as written for a reversible cell potential. It does not give the heat generation of an operating corroding surface.
+
+**11. Complete-cell equilibrium constant:**
+
+$$
+\ln K=\frac{zFE^\circ_{\rm cell}}{RT}.
+$$
+
+This follows at equilibrium, where $E_{\rm cell}=0$ and $\mathcal Q=K$.
+
+**12. Simple uniform-loss projection:**
+
+$$
+t_w(\tau)=t_{w,0}-c\tau.
+$$
+
+Wall thicknesses $t_w,t_{w,0}$ and rate/time units must match. This kinematic estimate is not a pressure-design equation or fitness-for-service assessment.
+
+**13. Descriptive pitting factor:**
+
+$$
+PF=d_{\max}/\bar d\qquad(\bar d>0).
+$$
+
+It describes inspected penetration relative to average loss over the stated area. It does not predict future pit growth.
+
+## 41. Welding Engineering
+
+[Full chapter](../chapters/41-welding-engineering.md)
+
+Use current $I$ in A, voltage $U$ in V, travel speed $v$ in m/s, length $L$ in m, force $F$ in N, and stress in Pa unless a numerical unit conversion is explicitly stated.
+
+**1. Electrical arc power:**
+
+$$
+P_{arc}=UI,\qquad \overline P_{arc}=\frac1T\int_0^T U(t)I(t)\,dt.
+$$
+
+For pulsed waveforms, the product of average voltage and average current need not equal average power.
+
+**2. Arc energy per unit length, constant conditions:**
+
+$$
+E_{arc}=UI/v.
+$$
+
+The result is J/m. **3. Net heat transferred per length:**
+
+$$
+H=\eta_{th}UI/v.
+$$
+
+$\eta_{th}$ is the specified thermal efficiency fraction. A code or procedure may define its reporting convention differently; identify whether the reported quantity includes this factor.
+
+**4. Explicit conversion with numerical travel speed $s$ in mm/min:**
+
+$$
+H_{\rm kJ/mm}=\frac{60\eta_{th}UI}{1000s}.
+$$
+
+**5. Arc-on time and transferred energy for a uniform run:**
+
+$$
+t_{arc}=L/v,\qquad Q_{net}=HL=\eta_{th}UI\,t_{arc}.
+$$
+
+Time is s and energy J; setup and interpass time are additional.
+
+**6. Cooling interval and mean cooling rate:**
+
+$$
+t_{8/5}=t(T=500^\circ\mathrm C)-t(T=800^\circ\mathrm C),\qquad \overline{|\dot T|}=300/t_{8/5}.
+$$
+
+This defines a monotonic cooling segment in seconds, with rate K/s. It is a useful descriptor for some steel welds, not a universal metallurgical acceptance limit.
+
+**7. Ideal equal-leg, flat-faced, right-angle fillet throat:**
+
+$$
+a=z\sin45^\circ=\frac z{\sqrt2}.
+$$
+
+$z$ is leg length and $a$ the theoretical root-to-face distance. This construction gives no extra penetration credit. Concavity, fit-up, fusion, and the governing design definition can change effective throat; see [TWI's throat-geometry discussion](https://www.twi-global.com/technical-knowledge/job-knowledge/design-part-2-091).
+
+**8. Nominal throat area of several weld segments:**
+
+$$
+A_w=\sum_i a_iL_{e,i}.
+$$
+
+$L_{e,i}$ are effective lengths supplied by the model or governing design method, not automatically every visible millimetre of a bead.
+
+**9. Centered direct loading, ideal uniform nominal shear:**
+
+$$
+\tau_{nom}=F/A_w.
+$$
+
+Load sharing assumes a symmetric or otherwise justified stiffness distribution. This equation excludes eccentric moment and local notch stresses.
+
+**10. Elastic weld-line-group centroid and polar area moment:**
+
+$$
+\bar x=\frac{\int x\,a\,d\ell}{A_w},\qquad \bar y=\frac{\int y\,a\,d\ell}{A_w},\qquad J_w=\int(x^2+y^2)a\,d\ell.
+$$
+
+Coordinates in $J_w$ are measured from the group centroid. $J_w$ is in $\mathrm{m^4}$.
+
+**11. Nominal in-plane moment loading in that line-group model:**
+
+$$
+M_z=Fe,\qquad \boldsymbol\tau_M=\frac{M_z}{J_w}(-y\mathbf e_x+x\mathbf e_y),\qquad \boldsymbol\tau=\frac{\mathbf F}{A_w}+\boldsymbol\tau_M.
+$$
+
+Here $e$ is a perpendicular eccentricity (m). Vector addition matters. This elastic nominal distribution is not a local three-dimensional throat stress or a code interaction rule.
+
+**12. Ideal triangular fillet volume and mass:**
+
+$$
+A_f=z^2/2,\qquad V_f=A_fL,\qquad m_f=\rho V_f.
+$$
+
+$A_f$ is bead cross-sectional area, distinct from throat area $A_w$. The mass estimate excludes reinforcement, penetration, spatter, and dilution bookkeeping; it is not necessarily wire consumption.
+
+**13. Constant-property thermal strain and free movement:**
+
+$$
+\varepsilon_{th}=\alpha\Delta T,\qquad \Delta L_{free}=\alpha L\Delta T.
+$$
+
+$\alpha$ is in K⁻¹. **14. Fully restrained, uniaxial elastic idealization:**
+
+$$
+\sigma_{th}=-E\alpha\Delta T.
+$$
+
+$E$ is modulus in Pa. The formula ceases to apply when yielding, creep, transformation, or restraint change becomes significant; it is not a weld residual-stress formula.
+
+**15. Stress-range and generic power-law fatigue representation:**
+
+$$
+\Delta\sigma=\sigma_{max}-\sigma_{min},\qquad N(\Delta\sigma)^m=C.
+$$
+
+$N$ is cycles, and $C$ has the units required by the specified stress measure and fitted exponent $m$. Nominal, structural hot-spot, and notch-stress curves are not interchangeable. No fatigue class or allowable value is supplied here.

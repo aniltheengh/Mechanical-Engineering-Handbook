@@ -1,6 +1,6 @@
 # Contents
 
-[Start page](README.md) · [Study route](STUDY_GUIDE.md) · [Coverage and limits](COVERAGE.md)
+[Start page](README.md) · [Formula handbook](books/09-formula-handbook.md) · [Study route](STUDY_GUIDE.md) · [Coverage and limits](COVERAGE.md)
 
 ## [Engineering foundations](books/01-foundations.md)
 
@@ -60,3 +60,12 @@
 - [32. Engineering Economics](chapters/32-engineering-economics.md)
 - [33. Energy Systems and Environmental Accounting](chapters/33-energy-and-environment.md)
 - [35 · Systems engineering and integrated design](chapters/35-systems-engineering.md)
+
+## [Specialist foundations in mechanical engineering](books/10-specialist-foundations.md)
+
+- [36 · Fracture mechanics and fatigue crack growth](chapters/36-fracture-mechanics.md)
+- [37 · Composite materials and laminated plates](chapters/37-composite-materials.md)
+- [38. Compressible flow](chapters/38-compressible-flow.md)
+- [39. Engineering acoustics](chapters/39-engineering-acoustics.md)
+- [40. Corrosion Engineering](chapters/40-corrosion-engineering.md)
+- [41. Welding Engineering](chapters/41-welding-engineering.md)

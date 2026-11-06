@@ -1,6 +1,6 @@
 # Validation record
 
-Edition: 6 November 2026. This original AI-assisted educational reference has automated numerical checks and a targeted second-agent review. It has not undergone comprehensive independent professional peer review or validation against hardware.
+Expanded edition: 7 November 2026. This original AI-assisted educational reference has automated numerical checks and a targeted second-agent review of the first edition. It has not undergone comprehensive independent professional peer review or validation against hardware.
 
 ## Numerical verification
 
@@ -10,18 +10,23 @@ Edition: 6 November 2026. This original AI-assisted educational reference has au
 | `verify_mechanics.py` | All 20 worked examples in chapters 04–07 and 18–23; equilibrium, energy, compatibility, independent derivative/response comparisons | 20 examples; 115 numerical and physical-identity checks passed |
 | `verify_thermal.py` | All 20 worked examples in chapters 08–17; recalculated values matched to printed source sections and selected balances | 20 examples; 57 printed numerical results passed |
 | `verify_systems.py` | All 20 worked examples in chapters 24–33; balances, compatibility, inverse kinematics, constraints, discounted cash flow | 20 examples passed |
+| `verify_advanced_mechanics.py` | Chapters 36–37; intensity/energy, Paris integration checked by quadrature, laminate stiffness assembly, recovered ply loads and energy, thickness scaling | 4 examples and 6 exercises; 78 checks passed |
+| `verify_gas_acoustics.py` | Chapters 38–39; nozzle flow, shock mass/momentum/enthalpy, logarithmic versus mean-square pressure calculations, transmission and resonance | 4 examples and 6 exercises; 44 checks passed |
+| `verify_corrosion_welding.py` | Chapters 40–41; charge loss versus current density and coupon-unit conversion, cell free energy, heat-input and weld-load balances | 4 examples and 6 exercises; 36 checks passed |
 
-The scripts cover all **70 numbered worked examples**. They also check selected exercises and capstone results, but do not machine-verify every one of the **105 exercise solutions**. A separate read-only review checked all 54 exercise/solution pairs in chapters 04–15 and 18–23; no material numerical mismatch was found. The resulting conceptual wording corrections were incorporated.
+The scripts cover all **82 numbered worked examples**. They check all 18 new exercise solutions in chapters 36–41 and selected earlier exercises and capstone results, but do not machine-verify every one of the **123 exercise solutions**. The new verifiers also require key checked values to appear in their published example sections. A separate read-only review of the first edition checked all 54 exercise/solution pairs in chapters 04–15 and 18–23; no material numerical mismatch was found. The resulting conceptual wording corrections were incorporated. The new specialist chapters have numerical and editorial review but have not received comprehensive independent specialist peer review.
 
 ## Document and equation checks
 
-`check_repository.py` checks the 35 chapter files, required section order, two examples and three exercise/solution pairs per chapter, balanced display-math delimiters, reading links, local links, and synchronization of the generated books with authoritative chapter files. It rejects obvious unfinished placeholders and unexpectedly short chapters.
+`check_repository.py` checks the chapter files against unique volume assignments, required section order, two examples and three exercise/solution pairs per chapter, balanced display-math delimiters, reading links, local links, README/catalog totals, and synchronization of generated books with authoritative chapter files. It rejects obvious unfinished placeholders and unexpectedly short chapters.
 
 `check_math.cjs` uses **KaTeX 0.19.1**, with parse errors enabled, to render every identified inline/display TeX expression in the chapters, capstone, and visual guide to HTML and MathML. This verifies renderer syntax, not mathematical truth or exact equivalence to GitHub's renderer.
 
-Final local audit passed: **35 chapters, 38,643 source words, 70 worked examples, 105 solved exercises, 373 displayed equation blocks in the chapters, and 219 local file links**. The renderer check passed **1,902 TeX expressions**, including variables and inline expressions, across 37 source documents. These counts are not a claim of 1,902 distinct engineering formulas.
+Historical first-edition audit (6 November): **35 chapters, 38,643 source words, 70 worked examples, 105 solved exercises, 373 displayed equation blocks, and 219 local file links** passed. Its renderer check passed **1,902 TeX expressions** across 37 source documents. These counts include inline variables and are not counts of distinct engineering formulas. The current expanded-edition totals are recorded in `catalog.json` and printed by the check scripts.
 
-Four original quantitative figures were generated from their stated equations, saved as PNG/SVG pairs, and visually inspected in a combined overview for labels, units, annotations, legends, and clipping. They show hypothetical/modelled behaviour, not measurements.
+The expanded edition has 41 chapters, 82 worked examples, and 123 solved exercises. Its new numerical suites add 158 checks across 12 examples and all 18 new exercise solutions. Final chapter words, equation blocks, local links, and renderer totals are reported by the reproducible checks rather than inferred from chapter count.
+
+Six original quantitative figures were generated from their stated equations and saved as PNG/SVG pairs. The original four were visually inspected in a combined overview; the two new fracture/acoustics figures were inspected individually for labels, units, annotations, legends, and clipping. They show hypothetical/modelled behaviour, not measurements.
 
 The [open library](references/OPEN_LIBRARY.md) records live publisher/institution access observations and distinctions among full books, courses, data, and previews. Some large PDFs were reachable but not fully extracted; limitations are disclosed. Not every page of every external resource has been reviewed.
 
@@ -34,6 +39,9 @@ python scripts/verify_foundations.py
 python scripts/verify_mechanics.py
 python scripts/verify_thermal.py
 python scripts/verify_systems.py
+python scripts/verify_advanced_mechanics.py
+python scripts/verify_gas_acoustics.py
+python scripts/verify_corrosion_welding.py
 python scripts/build_books.py
 python scripts/check_repository.py
 ```

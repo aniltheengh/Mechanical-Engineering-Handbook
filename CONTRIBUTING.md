@@ -15,6 +15,9 @@ python scripts/verify_foundations.py
 python scripts/verify_mechanics.py
 python scripts/verify_thermal.py
 python scripts/verify_systems.py
+python scripts/verify_advanced_mechanics.py
+python scripts/verify_gas_acoustics.py
+python scripts/verify_corrosion_welding.py
 python scripts/build_books.py
 python scripts/check_repository.py
 ```

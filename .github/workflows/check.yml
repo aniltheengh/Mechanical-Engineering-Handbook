@@ -21,6 +21,12 @@ jobs:
         run: python scripts/verify_thermal.py
       - name: Verify computational and systems examples
         run: python scripts/verify_systems.py
+      - name: Verify fracture and composite examples
+        run: python scripts/verify_advanced_mechanics.py
+      - name: Verify compressible flow and acoustics examples
+        run: python scripts/verify_gas_acoustics.py
+      - name: Verify corrosion and welding examples
+        run: python scripts/verify_corrosion_welding.py
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
