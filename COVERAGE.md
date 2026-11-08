@@ -1,6 +1,6 @@
 # Coverage and known limits
 
-Expanded edition: 7 November 2026. This edition has **41 substantial introductory/reference chapters**, grouped into nine theory volumes, plus a formula reference. Each chapter contains original explanatory content, equations, a derivation, two worked examples, and three solved exercises. The word count in `catalog.json` measures source words including formulas and references, not independent textbook pages.
+Expanded edition: 8 November 2026. This edition has **44 substantial introductory/reference chapters**, grouped into ten theory volumes, plus a formula reference. Each chapter contains original explanatory content, equations, a derivation, two worked examples, and three solved exercises. The word count in `catalog.json` measures source words including formulas and references, not independent textbook pages.
 
 ## What “broad mechanical engineering” means here
 
@@ -17,10 +17,11 @@ Expanded edition: 7 November 2026. This edition has **41 substantial introductor
 | Electromechanical systems | Circuits, motors, control, sensors, actuators, robotics | Mechanical-engineering support subjects; not full electrical/electronics degrees |
 | Engineering practice | Reliability, maintenance, economics, systems integration | Introductory methods and declared example assumptions |
 | Specialist foundations | Fracture mechanics, composites, compressible flow, acoustics, corrosion, welding | Dedicated introductory chapters with calculation examples; advanced analysis and qualification remain external |
+| Continuum, multiphase, and plants | Deformation/stress tensors, phase fractions and settling, steady balances and tank dynamics | Introductory models; no general multiphase closure, complete plant design, or code qualification |
 
 ## Subjects requiring further volumes or specialist references
 
-Advanced continuum mechanics; nonlinear and computational plasticity; elastic-plastic fracture and detailed crack-growth assessment; advanced anisotropic laminates and progressive composite failure; room acoustics and industrial noise-control design; advanced compressible flow and aerodynamics; turbulence modelling research; multiphase flow; cryogenics; vacuum engineering; nuclear systems; biomechanics; micro/nano systems; marine engineering; detailed automotive and aerospace design; welding procedure qualification; industrial management and operations research beyond elementary optimization; localized corrosion prediction and integrity assessment; and detailed process-plant design are not fully developed here. Chapters 36–41 now establish foundations in six previously uncovered areas, but they do not constitute complete specialist textbooks.
+Nonlinear constitutive modelling and computational plasticity; elastic-plastic fracture and detailed crack-growth assessment; advanced anisotropic laminates and progressive composite failure; room acoustics and industrial noise-control design; advanced compressible flow and aerodynamics; turbulence modelling research; multiphase regime transitions, interfacial closure, and phase-change systems; cryogenics; vacuum engineering; nuclear systems; biomechanics; micro/nano systems; marine engineering; detailed automotive and aerospace design; welding procedure qualification; industrial management and operations research beyond elementary optimization; localized corrosion prediction and integrity assessment; and detailed process-plant design are not fully developed here. Chapters 36–44 establish foundations in nine previously uncovered areas, but they do not constitute complete specialist textbooks.
 
 Civil, chemical, electrical, aerospace, and computer engineering are complete disciplines in their own right. This mechanical-engineering library includes their supporting concepts where useful; it does not claim to cover all engineering disciplines exhaustively.
 
@@ -36,4 +37,4 @@ The [validation record](VALIDATION.md) states exactly which numerical and struct
 
 ## Expansion priorities
 
-The next useful additions are deeper problem sets and measured projects in strength of materials, fluid systems, machine design, and heat transfer; then continuum mechanics, multiphase flow, and process-plant engineering. Expand a topic by deriving its models, documenting units and assumptions, adding independent benchmark checks, and linking it into the contents. Increasing the number of headings alone does not increase coverage.
+The next useful additions are deeper problem sets and measurable projects in strength of materials, fluid systems, machine design, and heat transfer. Further subject expansion can address plasticity, vacuum engineering, and industrial operations research. Continuum mechanics, multiphase flow, and process-plant foundations now have introductory chapters 42–44. Expand a topic by deriving its models, documenting units and assumptions, adding independent benchmark checks, and linking it into the contents. Increasing the number of headings alone does not increase coverage.

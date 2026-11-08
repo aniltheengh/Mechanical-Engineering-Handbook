@@ -18,6 +18,9 @@ python scripts/verify_systems.py
 python scripts/verify_advanced_mechanics.py
 python scripts/verify_gas_acoustics.py
 python scripts/verify_corrosion_welding.py
+python scripts/verify_continuum.py
+python scripts/verify_multiphase.py
+python scripts/verify_process_plant.py
 python scripts/build_books.py
 python scripts/check_repository.py
 ```

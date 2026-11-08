@@ -1,6 +1,6 @@
 # Manufacturing, metrology, and CAD
 
-Mechanical Engineering Handbook · Expanded edition · 2026-11-07
+Mechanical Engineering Handbook · Expanded edition · 2026-11-08
 
 An original, AI-assisted educational reference. Maintained by aniltheengh. See [coverage](../COVERAGE.md), [validation](../VALIDATION.md), and [license](../LICENSE.md).
 

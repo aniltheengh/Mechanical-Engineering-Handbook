@@ -1,6 +1,6 @@
 # Quantitative visual guide
 
-These original figures are generated from the equations and assumed inputs below. They illustrate model behaviour, not measured equipment performance. Regenerate them with `python scripts/generate_figures.py` after installing NumPy and Matplotlib. All six plots are available as PNG for reading and SVG for scalable reuse.
+These original figures are generated from the equations and assumed inputs below. They illustrate model behaviour, not measured equipment performance. Regenerate them with `python scripts/generate_figures.py` after installing NumPy and Matplotlib. All eight plots are available as PNG for reading and SVG for scalable reuse.
 
 ## Pump operating point
 
@@ -37,3 +37,15 @@ The teaching model uses $K_I=Y\sigma\sqrt{\pi a}$ with constant $Y=1.12$, stress
 ![Two incoherent sources add about three decibels while distance reduces free-field level](assets/sound-distance.png)
 
 Each assumed compact source produces 80 dB sound pressure level at 1 m. In the far-field free-field model, a single source gives $L_p(r)=80-20\log_{10}(r/1\ \mathrm m)$. Two equal mutually incoherent sources at the same distance give $L_{p,\mathrm{sum}}=L_p+10\log_{10}2$, or 69.031 dB at 5 m. The same-distance condition applies to the receiver, and the distance range must actually be in each source's far field. Reflections, atmospheric absorption, near-field structure, and phase coherence can change the result. This is unweighted level relative to 20 µPa; it is not an occupational exposure limit or a dBA measurement. Read [engineering acoustics](chapters/39-engineering-acoustics.md). [SVG](assets/sound-distance.svg).
+
+## Gas mass quality and void fraction
+
+![Void fraction as a function of gas mass quality for three assumed velocity ratios](assets/void-fraction-quality.png)
+
+For co-current one-dimensional phase averages, $x$ is gas mass-flow quality, $S=u_g/u_l$ is the gas-to-liquid velocity ratio, and $\alpha$ is gas void fraction. The relationship is $\alpha=x\rho_l/[x\rho_l+(1-x)\rho_gS]$. These curves assume constant $\rho_l=1000\ \mathrm{kg/m^3}$ and $\rho_g=1.2\ \mathrm{kg/m^3}$; the velocity ratios 1, 2, and 5 are prescribed comparisons, not experimentally predicted slip. At $x=0.001$ and $S=1$, the gas carries 0.1% of the mass flow but occupies 45.48% of the cross-sectional volume in this idealized model. The horizontal axis shows mass quality as a percentage on a logarithmic scale. A very small gas mass fraction can invalidate an all-liquid interpretation. No flow-regime, pressure-loss, or stable-operation prediction follows from these curves alone. Read [multiphase flow](chapters/43-multiphase-flow.md). [SVG](assets/void-fraction-quality.svg).
+
+## Stirred-tank tracer response
+
+![Tracer concentration approaches its inlet value exponentially in an ideal stirred tank](assets/tank-tracer-response.png)
+
+The model has constant volume $V=1.20\ \mathrm{m^3}$, equal inlet and outlet volume flow $Q=0.00200\ \mathrm{m^3/s}$, zero initial tracer, and a step to inlet concentration $C_{\mathrm{in}}=0.100\ \mathrm{kg/m^3}=100\ \mathrm{mg/L}$. The well-mixed conservative balance gives $C(t)=C_{\mathrm{in}}[1-e^{-t/\tau}]$, where $\tau=V/Q=600\ \mathrm s$. At one residence time the tank and outlet reach 63.2121 mg/L; reaching 95% of the new inlet value takes $-\tau\ln(0.05)=1797.44\ \mathrm s$, approximately 29.96 min. The graph uses minutes. Residence time does not measure the impeller mixing time or guarantee all original fluid has exited. Dead zones, short-circuiting, reaction, density changes, and changing volume require additional models or measurements. Read [process-plant engineering, Example 2](chapters/44-process-plant-engineering.md). [SVG](assets/tank-tracer-response.svg).

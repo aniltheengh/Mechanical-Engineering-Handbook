@@ -1,6 +1,6 @@
 # Mechanical Engineering Formula Handbook
 
-Generated from the 41 chapter formula sections. Read the linked chapter for derivations, examples, and additional assumptions. Symbols are local to each chapter; SI is the default. This reference does not supply code-compliant design rules or proprietary property tables.
+Generated from the 44 chapter formula sections. Read the linked chapter for derivations, examples, and additional assumptions. Symbols are local to each chapter; SI is the default. This reference does not supply code-compliant design rules or proprietary property tables.
 
 ## 01 · Units, dimensions, and engineering estimates
 
@@ -3111,3 +3111,383 @@ $$
 $$
 
 $N$ is cycles, and $C$ has the units required by the specified stress measure and fitted exponent $m$. Nominal, structural hot-spot, and notch-stress curves are not interchangeable. No fatigue class or allowable value is supplied here.
+
+## 42 · Continuum mechanics: deformation, stress, and balance
+
+[Full chapter](../chapters/42-continuum-mechanics.md)
+
+Coordinates and displacements are in m, time in s, density in kg/m³, and stress in Pa. Bold uppercase $\mathbf E_G$ below is Green–Lagrange strain; scalar $E$ is Young's modulus. The double contraction is $\mathbf A:\mathbf B=\sum_{ij}A_{ij}B_{ij}$, so both symmetric off-diagonal terms contribute.
+
+**1. Motion, displacement, and deformation gradient**:
+
+$$
+\mathbf u=\mathbf x-\mathbf X,\qquad
+F_{iJ}=\frac{\partial x_i}{\partial X_J},\qquad
+d\mathbf x=\mathbf F\,d\mathbf X,\qquad
+\mathbf F=\mathbf I+\mathbf H,\quad\mathbf H=\nabla_X\mathbf u.
+$$
+
+$\mathbf F$ and $\mathbf H$ are dimensionless. Uppercase material indices identify derivatives in the reference configuration.
+
+**2. Local volume and mass conservation**, for a locally invertible, orientation-preserving motion without mass sources:
+
+$$
+J=\det\mathbf F>0,\qquad dv=J\,dV,\qquad\rho J=\rho_0.
+$$
+
+Positive $J$ is a necessary local condition; it alone does not rule out distant parts of a body intersecting.
+
+**3. Finite strain measures**:
+
+$$
+\mathbf C=\mathbf F^T\mathbf F,\qquad
+\mathbf B=\mathbf F\mathbf F^T,\qquad
+\mathbf E_G=\tfrac12(\mathbf C-\mathbf I),\qquad
+\mathbf e=\tfrac12(\mathbf I-\mathbf B^{-1}).
+$$
+
+$\mathbf E_G$ refers to reference directions; Euler–Almansi strain $\mathbf e$ refers to current directions. They are generally different numerical tensors.
+
+**4. Infinitesimal strain and the omitted term**:
+
+$$
+\boldsymbol\epsilon=\tfrac12(\mathbf H+\mathbf H^T),\qquad
+\boldsymbol\omega=\tfrac12(\mathbf H-\mathbf H^T),\qquad
+\mathbf E_G=\boldsymbol\epsilon+\tfrac12\mathbf H^T\mathbf H.
+$$
+
+Small-gradient theory neglects the quadratic term. Engineering shear strain is $\gamma_{xy}=2\epsilon_{xy}$, not $\epsilon_{xy}$.
+
+**5. Polar decomposition and line stretch**, for nonsingular $\mathbf F$ with $J>0$:
+
+$$
+\mathbf F=\mathbf R\mathbf U=\mathbf V\mathbf R,\qquad
+\mathbf R^T\mathbf R=\mathbf I,\quad\det\mathbf R=1,\qquad
+\lambda_{\mathbf N}=\sqrt{\mathbf N\cdot\mathbf C\mathbf N}.
+$$
+
+$\mathbf U,\mathbf V$ are positive-definite stretch tensors; $\mathbf N$ is a reference unit direction. Pure rigid rotation has $\mathbf C=\mathbf I$ and zero finite strain.
+
+**6. Cauchy traction and its decomposition**, current unit normal $\mathbf n$:
+
+$$
+\mathbf t=\boldsymbol\sigma\mathbf n,\qquad
+\sigma_n=\mathbf n\cdot\mathbf t,\qquad
+\mathbf t_s=\mathbf t-\sigma_n\mathbf n.
+$$
+
+The scalar $\sigma_n$ is tensile positive. Shear-traction magnitude is $\|\mathbf t_s\|$.
+
+**7. Area and stress transformations**, reference normal $\mathbf N$:
+
+$$
+\mathbf n\,da=J\mathbf F^{-T}\mathbf N\,dA,\qquad
+\mathbf P=J\boldsymbol\sigma\mathbf F^{-T},\qquad
+\mathbf S=\mathbf F^{-1}\mathbf P.
+$$
+
+$\mathbf P$ is first Piola–Kirchhoff stress and generally is not symmetric. $\mathbf S$ is second Piola–Kirchhoff stress; it is symmetric when Cauchy stress is symmetric. All have Pa units but act on different geometric measures.
+
+**8. Spatial balances of mass and linear momentum**:
+
+$$
+\frac{D\rho}{Dt}+\rho\nabla_x\cdot\mathbf v=0,\qquad
+\frac{\partial\sigma_{ij}}{\partial x_j}+\rho b_i=\rho a_i.
+$$
+
+$\mathbf b$ is body force per mass in N/kg, and $\mathbf a=D\mathbf v/Dt$. In static equilibrium acceleration is zero; body force per volume is $\rho\mathbf b$ in N/m³.
+
+**9. Velocity gradient and deformation rate**, with the dot following a material particle:
+
+$$
+\mathbf L=\nabla_x\mathbf v=\dot{\mathbf F}\mathbf F^{-1},\qquad
+\mathbf D=\tfrac12(\mathbf L+\mathbf L^T),\qquad
+\dot J=J\operatorname{tr}\mathbf D.
+$$
+
+These rates have s⁻¹ units. The skew part of $\mathbf L$ describes local spin.
+
+**10. Stress power identity**:
+
+$$
+\mathbf P:\dot{\mathbf F}=\mathbf S:\dot{\mathbf E}_G
+=J\boldsymbol\sigma:\mathbf D.
+$$
+
+The left expressions are power per reference volume; $\boldsymbol\sigma:\mathbf D$ is power per current volume. Symmetric Cauchy stress and the stated conventional continuum are assumed.
+
+**11. Small-strain isotropic elasticity**, with no thermal or initial strain:
+
+$$
+\boldsymbol\sigma=2G\boldsymbol\epsilon+\lambda_L\operatorname{tr}(\boldsymbol\epsilon)\mathbf I.
+$$
+
+$G$ is shear modulus; $\lambda_L$ is the first Lamé parameter, not a principal stretch.
+
+**12. Modulus relations and stability range**:
+
+$$
+G=\frac E{2(1+\nu)},\qquad
+K=\frac E{3(1-2\nu)},\qquad
+\lambda_L=\frac{E\nu}{(1+\nu)(1-2\nu)}.
+$$
+
+Positive strain energy requires $E>0$ and $-1<\nu<1/2$ for this compressible isotropic model. Exact incompressibility needs a constraint and pressure variable; do not insert $\nu=1/2$ into the denominators.
+
+**13. Inverse elastic relation**:
+
+$$
+\boldsymbol\epsilon=\frac{1+\nu}{E}\boldsymbol\sigma
+-\frac\nu E\operatorname{tr}(\boldsymbol\sigma)\mathbf I.
+$$
+
+This is a three-dimensional relation. Plane stress sets selected stresses to zero; plane strain sets selected strains to zero and generally leaves a nonzero out-of-plane stress.
+
+**14. Hydrostatic and deviatoric stress measures**:
+
+$$
+I_1=\operatorname{tr}\boldsymbol\sigma,\quad
+\mathbf s=\boldsymbol\sigma-\frac{I_1}{3}\mathbf I,\quad
+J_2=\tfrac12\mathbf s:\mathbf s,\quad
+\sigma_{vm}=\sqrt{3J_2},\quad p=-I_1/3.
+$$
+
+$p$ is compression-positive pressure. Principal stresses are eigenvalues of symmetric $\boldsymbol\sigma$. Invariants do not change under a rigid coordinate rotation; von Mises stress is not a universal failure criterion.
+
+**15. Linear elastic strain-energy density**, relative to the unstressed state:
+
+$$
+W=\tfrac12\boldsymbol\sigma:\boldsymbol\epsilon
+=G\boldsymbol\epsilon:\boldsymbol\epsilon
++\tfrac12\lambda_L(\operatorname{tr}\boldsymbol\epsilon)^2.
+$$
+
+$W$ is J/m³. Reference/current volume differences are neglected consistently in this small-strain expression.
+
+## 43. Multiphase flow
+
+[Full chapter](../chapters/43-multiphase-flow.md)
+
+Use subscripts $g$ and $l$ for gas and liquid, density $\rho$ in kg/m³, mass flow $\dot m$ in kg/s, area $A$ in m², speed in m/s and pressure in Pa. The one-dimensional relations use representative phase mean velocities and locally uniform phase properties. The slip formulas assume co-current flow with positive finite velocities.
+
+1. Flow quality and static quality are different mass fractions:
+
+$$
+x=\frac{\dot m_g}{\dot m_g+\dot m_l},\qquad x_{st}=\frac{m_g}{m_g+m_l}.
+$$
+
+2. Gas area fraction and phase mass flow:
+
+$$
+\alpha=\frac{A_g}{A},\qquad \dot m_g=\rho_g\alpha A u_g,\qquad \dot m_l=\rho_l(1-\alpha)A u_l.
+$$
+
+Gas and liquid fractions sum to one. An area-averaged model must account consistently for nonuniform or fluctuating profiles.
+
+3. Local volume-average mixture density and static quality:
+
+$$
+\rho_m=\alpha\rho_g+(1-\alpha)\rho_l,\qquad x_{st}=\frac{\alpha\rho_g}{\rho_m}.
+$$
+
+4. Superficial velocities and actual phase velocities:
+
+$$
+j_g=\frac{\dot m_g}{\rho_gA}=\alpha u_g,\qquad j_l=\frac{\dot m_l}{\rho_lA}=(1-\alpha)u_l,\qquad j=j_g+j_l.
+$$
+
+5. Total mass flux, in kg/(m² s):
+
+$$
+G=\frac{\dot m}{A}=\rho_gj_g+\rho_lj_l.
+$$
+
+6. Slip ratio and its relation to void fraction:
+
+$$
+S=\frac{u_g}{u_l},\qquad \alpha=\frac{x\rho_l}{x\rho_l+(1-x)\rho_gS},\qquad x_{st}=\frac{x}{x+S(1-x)}.
+$$
+
+The endpoint cases $x=0$ and $x=1$ are interpreted as single-phase limits; a velocity ratio for an absent phase is not physically measurable.
+
+7. Homogeneous specialization, $S=1$:
+
+$$
+\frac1{\rho_h}=\frac{x}{\rho_g}+\frac{1-x}{\rho_l},\qquad u_g=u_l=j,\qquad G=\rho_hj,\qquad x_{st}=x.
+$$
+
+The reciprocal density uses mass fractions. The direct average in formula 3 uses volume fractions. With slip, $G/j$ is a transport ratio and need not equal local holdup density $\rho_m$.
+
+8. Phase continuity in a constant-area one-dimensional passage:
+
+$$
+\frac{\partial(\alpha_k\rho_k)}{\partial t}+\frac{\partial(\alpha_k\rho_ku_k)}{\partial z}=\Gamma_k,\qquad \Gamma_g+\Gamma_l=0.
+$$
+
+$\Gamma_k$ is interphase mass production per mixture volume in kg/(m³ s), with no external mass injection. Adding phase equations cancels internal transfer.
+
+9. Axial momentum flux for uniform phase profiles:
+
+$$
+\Pi=G^2\left[\frac{x^2}{\alpha\rho_g}+\frac{(1-x)^2}{(1-\alpha)\rho_l}\right],\qquad \Pi_h=G^2/\rho_h.
+$$
+
+Both have units Pa. Profile and fluctuation corrections may be needed beyond this approximation.
+
+10. Steady constant-area mixture momentum balance along a passage of length $L$:
+
+$$
+p_{in}-p_{out}=\Delta p_f+\int_0^L\rho_mg\sin\theta\,dz+(\Pi_{out}-\Pi_{in})+\Delta p_{local}.
+$$
+
+$\theta$ is the angle above horizontal in the flow direction. Model local losses consistently without double-counting acceleration.
+
+11. A homogeneous friction approximation and a separately defined multiplier:
+
+$$
+\left(-\frac{dp}{dz}\right)_{f,h}=\frac{f_DG^2}{2D_h\rho_h},\qquad \phi_{lo}^2=\frac{(-dp/dz)_{f,tp}}{(-dp/dz)_{f,lo}}.
+$$
+
+$f_D$ is the Darcy factor; $D_h$ is hydraulic diameter in m. The liquid-only reference $lo$ sends the **entire total mass flux** through the pipe as liquid. Effective viscosity and friction closures require a stated model; no universal mixture-viscosity averaging rule is implied.
+
+12. Interfacial scaling parameters for a gas inclusion in liquid, of diameter $d$:
+
+$$
+We=\frac{\rho_lu_{rel}^2d}{\sigma},\qquad Eo=\frac{|\rho_l-\rho_g|gd^2}{\sigma}.
+$$
+
+Surface tension $\sigma$ is in N/m. These compare inertial and gravitational effects with surface tension; they do not alone identify a complete flow regime.
+
+13. Rigid-sphere drag and particle Reynolds number:
+
+$$
+F_D=\tfrac12C_D\rho_fv_{rel}^2\frac{\pi d^2}{4},\qquad Re_p=\frac{\rho_f|v_{rel}|d}{\mu_f},\qquad C_D\simeq\frac{24}{Re_p}\quad(Re_p\ll1).
+$$
+
+Dynamic viscosity $\mu_f$ is in Pa s. Stokes drag is the creeping-flow limit, not a general sphere-drag law.
+
+14. Terminal settling of an isolated rigid sphere in an effectively unbounded quiescent Newtonian fluid:
+
+$$
+v_t=\frac{(\rho_p-\rho_f)gd^2}{18\mu_f},\qquad F_D=3\pi\mu_fd|v_t|.
+$$
+
+Downward velocity is positive for a heavier particle. Check $Re_p$ using the calculated speed. The model excludes wall effects, particle interactions, deformation and significant noncontinuum effects.
+
+15. Equilibrium vapor quality from enthalpy for a saturated, single-component two-phase mixture:
+
+$$
+x_{eq}=\frac{h-h_f}{h_g-h_f}.
+$$
+
+Enthalpies share one mass basis. This relation is not an air-water gas-fraction calculation and is not a literal phase fraction outside the two-phase equilibrium region.
+
+## 44. Process Plant Engineering
+
+[Full chapter](../chapters/44-process-plant-engineering.md)
+
+Use inventory $M$ in kg, mass flow $\dot m$ in kg/s, volumetric flow $Q_v$ in $\mathrm{m^3/s}$, volume $V$ in $\mathrm{m^3}$, concentration $C$ in $\mathrm{kg/m^3}$, and time $t$ in s. Heat rate $\dot Q_h$ and shaft work rate $\dot W_s$ are in W; $\dot Q_h>0$ enters the system and $\dot W_s>0$ leaves as shaft work.
+
+**1. Total mass inventory:**
+
+$$
+\frac{dM}{dt}=\sum_{in}\dot m_i-\sum_{out}\dot m_j.
+$$
+
+**2. Species inventory with mass fraction $w_k$:**
+
+$$
+\frac{d(Mw_k)}{dt}=\sum_{in}\dot m_iw_{k,i}-\sum_{out}\dot m_jw_{k,j}+\dot m_{k,gen}.
+$$
+
+$\dot m_{k,gen}$ is net generation in kg/s; it is zero for the conservative tracer used below.
+
+**3. Steady open-system energy balance:**
+
+$$
+0=\dot Q_h-\dot W_s+\sum_{in}\dot m_i\left(h_i+\frac{u_i^2}{2}+gz_i\right)-\sum_{out}\dot m_j\left(h_j+\frac{u_j^2}{2}+gz_j\right).
+$$
+
+Specific enthalpy $h$ is J/kg, velocity $u$ m/s, and elevation $z$ m. Enthalpies must use one consistent reference and include required phase or reaction effects.
+
+**4. Steady, nonreactive, adiabatic mixing with one outlet and constant equal $c_p$:**
+
+$$
+\dot m_o=\sum_i\dot m_i,\qquad T_o=\frac{\sum_i\dot m_iT_i}{\dot m_o}.
+$$
+
+Neglect kinetic, potential, and shaft-work effects and heat of mixing. A common Celsius reference is valid here because the common offset cancels through mass conservation.
+
+**5. Conservative mass-fraction blending:**
+
+$$
+w_o=\frac{\sum_i\dot m_iw_i}{\dot m_o}.
+$$
+
+Do not substitute volume fractions without a density and mixing-volume model.
+
+**6. Constant-density tank level, vertical constant area $A_T$:**
+
+$$
+A_T\frac{d\ell}{dt}=\sum Q_{v,in}-\sum Q_{v,out}.
+$$
+
+Level $\ell$ is m; variable-area vessels require $dV/d\ell$ instead of constant $A_T$.
+
+**7. Nominal hydraulic residence time:**
+
+$$
+\tau=V/Q_v.
+$$
+
+Use working liquid volume and actual throughput. This is not a universal minimum contact time or impeller mixing time.
+
+**8. Ideal constant-volume, constant-flow stirred tank with conservative solute:**
+
+$$
+V\frac{dC}{dt}=Q_v(C_{in}-C),\qquad C_{out}=C.
+$$
+
+**9. Constant inlet after a step, initial concentration $C_0$:**
+
+$$
+C(t)=C_{in}+(C_0-C_{in})e^{-t/\tau}.
+$$
+
+**10. Time to complete fraction $f$ of the initial-to-final change:**
+
+$$
+t_f=-\tau\ln(1-f),\qquad0<f<1.
+$$
+
+**11. Ideal stirred-tank residence-time probability density:**
+
+$$
+E(t)=\frac1\tau e^{-t/\tau},\qquad \int_0^\infty E(t)dt=1,\qquad \int_0^\infty tE(t)dt=\tau.
+$$
+
+$E(t)$ has units $\mathrm{s^{-1}}$. Individual fluid elements have different residence times.
+
+**12. Pipe section and steady junction continuity:**
+
+$$
+u=\frac{4Q_v}{\pi D^2},\qquad \sum Q_{v,in}=\sum Q_{v,out}.
+$$
+
+The volumetric junction form assumes equal constant density. Head losses and pump characteristics must also be satisfied; continuity alone cannot determine every branch flow.
+
+**13. Single-phase utility duty with constant heat capacity:**
+
+$$
+|\dot Q_h|=\dot m_u c_{p,u}|T_{u,out}-T_{u,in}|.
+$$
+
+$c_{p,u}$ is J/(kg K). Available temperature approach and exchanger conductance impose additional constraints.
+
+**14. Ideal linear 4–20 mA scaling:**
+
+$$
+I_{\rm mA}=4+16\frac{x-x_L}{x_U-x_L}.
+$$
+
+$x_L,x_U$ are configured engineering-unit range limits. This mapping describes valid measurement span; out-of-range and fault behavior depend on the device and configuration.

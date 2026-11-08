@@ -1,5 +1,12 @@
 # Release history
 
+## 8 November 2026 — continuum, multiphase, and process-plant expansion
+
+- Added chapters 42–44 and Book 11: continuum mechanics, multiphase flow, and process-plant engineering. The library now has 44 chapters, ten theory volumes, and one consolidated formula handbook.
+- Added six worked examples and nine solved exercises, with numerical checks for deformation and stress, phase balances and settling, and steady/transient plant balances.
+- Added gas-quality/void-fraction and stirred-tank response figures, with assumed conditions, units, and model limits.
+- Extended the study route, open-resource library, formula compilation, and automated GitHub checks to the new subjects.
+
 ## 7 November 2026 — specialist foundations expansion
 
 - Added chapters 36–41: fracture mechanics, composite materials, compressible flow, engineering acoustics, corrosion engineering, and welding engineering.

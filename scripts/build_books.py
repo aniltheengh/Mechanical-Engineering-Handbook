@@ -7,7 +7,7 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-EDITION = "2026-11-07"
+EDITION = "2026-11-08"
 VOLUMES = [
     ("01-foundations", "Engineering foundations", [1, 2, 3]),
     ("02-mechanics-and-design", "Mechanics, materials, and machine design", [4, 5, 6, 7, 18, 19, 20, 34]),
@@ -18,6 +18,7 @@ VOLUMES = [
     ("07-electromechanical-systems", "Electrical, control, mechatronics, and robotics", [26, 27, 28, 29]),
     ("08-engineering-practice", "Reliability, economics, energy, and systems", [31, 32, 33, 35]),
     ("10-specialist-foundations", "Specialist foundations in mechanical engineering", [36, 37, 38, 39, 40, 41]),
+    ("11-continuum-multiphase-and-plants", "Continuum mechanics, multiphase flow, and process plants", [42, 43, 44]),
 ]
 
 

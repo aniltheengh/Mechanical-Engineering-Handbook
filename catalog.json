@@ -1,7 +1,7 @@
 {
-  "edition": "2026-11-07",
-  "chapter_count": 41,
-  "theory_volumes": 9,
+  "edition": "2026-11-08",
+  "chapter_count": 44,
+  "theory_volumes": 10,
   "chapters": [
     {
       "number": 1,
@@ -371,7 +371,34 @@
       "source_words": 1728,
       "worked_examples": 2,
       "display_equation_blocks": 15
+    },
+    {
+      "number": 42,
+      "title": "42 \u00b7 Continuum mechanics: deformation, stress, and balance",
+      "path": "chapters/42-continuum-mechanics.md",
+      "volume": "11-continuum-multiphase-and-plants",
+      "source_words": 2071,
+      "worked_examples": 2,
+      "display_equation_blocks": 17
+    },
+    {
+      "number": 43,
+      "title": "43. Multiphase flow",
+      "path": "chapters/43-multiphase-flow.md",
+      "volume": "11-continuum-multiphase-and-plants",
+      "source_words": 1952,
+      "worked_examples": 2,
+      "display_equation_blocks": 15
+    },
+    {
+      "number": 44,
+      "title": "44. Process Plant Engineering",
+      "path": "chapters/44-process-plant-engineering.md",
+      "volume": "11-continuum-multiphase-and-plants",
+      "source_words": 1993,
+      "worked_examples": 2,
+      "display_equation_blocks": 15
     }
   ],
-  "source_words": 48305
+  "source_words": 54321
 }

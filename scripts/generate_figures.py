@@ -77,7 +77,30 @@ def draw_acoustics(ax):
     ax.set_xticks([1,2,4,8,16],labels=["1","2","4","8","16"])
     ax.legend(fontsize=9)
 
-drawers=[("pump-operating-point",draw_pump),("thermal-response",draw_cooling),("vibration-response",draw_vibration),("numerical-convergence",draw_error),("fracture-intensity",draw_fracture),("sound-distance",draw_acoustics)]
+def draw_void_fraction(ax):
+    quality=np.geomspace(1e-5,.1,401)
+    for slip,color in [(1,blue),(2,orange),(5,green)]:
+        alpha=quality*1000/(quality*1000+(1-quality)*1.2*slip)
+        ax.semilogx(quality*100,alpha,color=color,lw=2.3,label=f"Velocity ratio S = {slip}")
+    x=.001;alpha=x*1000/(x*1000+(1-x)*1.2)
+    ax.scatter([x*100],[alpha],c=blue,zorder=5)
+    ax.annotate(f"S = 1: 0.1% gas by mass\n{100*alpha:.2f}% gas by volume",(x*100,alpha),xytext=(.003,.75),arrowprops={"arrowstyle":"->"},fontsize=10)
+    ax.set(xlabel="Gas mass-flow quality x (%)",ylabel="Gas void fraction α (dimensionless)",title="Mass fraction differs from occupied volume",ylim=(0,1.04))
+    ax.legend(loc="lower right",fontsize=9)
+
+def draw_tank_response(ax):
+    minutes=np.linspace(0,50,401)
+    concentration=100*(1-np.exp(-minutes/10))
+    ax.plot(minutes,concentration,color=blue,lw=2.4,label="Perfectly mixed constant-volume tank")
+    ax.axhline(100,color=orange,ls="--",label="Inlet tracer = 100 mg/L")
+    at_tau=100*(1-np.exp(-1));t95=-10*np.log(.05)
+    ax.scatter([10,t95],[at_tau,95],c=green,zorder=5)
+    ax.annotate("One residence time\n10 min: 63.21 mg/L",(10,at_tau),xytext=(17,32),arrowprops={"arrowstyle":"->"},fontsize=10)
+    ax.annotate("95% response\n29.96 min",(t95,95),xytext=(33,70),arrowprops={"arrowstyle":"->"},fontsize=10)
+    ax.set(xlabel="Time after inlet step (min)",ylabel="Tank / outlet tracer concentration (mg/L)",title="Residence time is not full replacement time",ylim=(0,112))
+    ax.legend(loc="lower right",fontsize=9)
+
+drawers=[("pump-operating-point",draw_pump),("thermal-response",draw_cooling),("vibration-response",draw_vibration),("numerical-convergence",draw_error),("fracture-intensity",draw_fracture),("sound-distance",draw_acoustics),("void-fraction-quality",draw_void_fraction),("tank-tracer-response",draw_tank_response)]
 for name,draw in drawers:
     fig,ax=plt.subplots(figsize=(8,5),layout="constrained")
     draw(ax);ax.grid(alpha=.2)
@@ -86,7 +109,7 @@ for name,draw in drawers:
     svg_path=OUT/f"{name}.svg"
     svg_path.write_text("\n".join(line.rstrip() for line in svg_path.read_text(encoding="utf-8").splitlines())+"\n",encoding="utf-8",newline="\n")
     plt.close(fig)
-fig,axes=plt.subplots(3,2,figsize=(14,13.5),layout="constrained")
+fig,axes=plt.subplots(4,2,figsize=(14,18),layout="constrained")
 for ax,(_,draw) in zip(axes.flat,drawers): draw(ax);ax.grid(alpha=.2)
 fig.suptitle("Mechanical Engineering Handbook · Quantitative visual guide",fontsize=19)
 fig.savefig(OUT/"visual-overview.png",dpi=140)

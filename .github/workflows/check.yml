@@ -27,6 +27,12 @@ jobs:
         run: python scripts/verify_gas_acoustics.py
       - name: Verify corrosion and welding examples
         run: python scripts/verify_corrosion_welding.py
+      - name: Verify continuum mechanics examples
+        run: python scripts/verify_continuum.py
+      - name: Verify multiphase flow examples
+        run: python scripts/verify_multiphase.py
+      - name: Verify process plant examples
+        run: python scripts/verify_process_plant.py
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

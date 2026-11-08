@@ -23,6 +23,7 @@ Keep a notebook with four columns: model, assumptions, calculation, and evidence
 | 9. Engineering decisions | 31–33, 35 | A reliability model, discounted cost comparison, energy boundary, and testable requirements |
 | 10. Integration | [Capstone](CAPSTONE.md) | A traceable calculation package with limitations and verification criteria |
 | 11. Specialist foundations | 36–41 | A crack-assessment model, composite stiffness bound, choked-flow calculation, sound-level sum, corrosion-loss estimate, and welding heat/load calculation |
+| 12. Fields, phases, and plants | 42–44 | Distinguish strain from rigid rotation, recover phase mass flows, and close a plant mass balance with a tank transient |
 
 The [formula handbook](books/09-formula-handbook.md) is useful for revision after studying the corresponding theory. Before using a formula, identify the physical quantity, sign convention, units, assumptions, and limiting case. If any are unclear, return to the chapter.
 
@@ -31,6 +32,8 @@ Before chapters 36–37, study stress/strain and material behaviour in 06–07. 
 ## For a plant/piping designer
 
 After the foundations, prioritize statics, strength of materials, fluid mechanics, pipe flow and pumps, heat transfer, materials, metrology, CAD/drawing, reliability, and systems engineering. Connect a 3D model to the P&ID, line conditions, supports, access, and maintenance requirements. A geometrically correct CAD model does not establish pressure adequacy, flexibility, stress compliance, or equipment performance.
+
+Then study [process-plant engineering](chapters/44-process-plant-engineering.md) and sketch a flow diagram for the [pumping capstone](CAPSTONE.md). Attach a stream table with mass flow, temperature, pressure basis, and assumed composition. Use [multiphase flow](chapters/43-multiphase-flow.md) to explain why entrained gas or settling particles can invalidate a single-phase pipe model. Before [continuum mechanics](chapters/42-continuum-mechanics.md), revisit vectors and matrices in 02 and stress/strain in 06; distinguish material motion, force balance, and constitutive response.
 
 ## For deeper textbook study
 

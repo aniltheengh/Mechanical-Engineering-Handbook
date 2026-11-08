@@ -69,3 +69,9 @@
 - [39. Engineering acoustics](chapters/39-engineering-acoustics.md)
 - [40. Corrosion Engineering](chapters/40-corrosion-engineering.md)
 - [41. Welding Engineering](chapters/41-welding-engineering.md)
+
+## [Continuum mechanics, multiphase flow, and process plants](books/11-continuum-multiphase-and-plants.md)
+
+- [42 · Continuum mechanics: deformation, stress, and balance](chapters/42-continuum-mechanics.md)
+- [43. Multiphase flow](chapters/43-multiphase-flow.md)
+- [44. Process Plant Engineering](chapters/44-process-plant-engineering.md)
