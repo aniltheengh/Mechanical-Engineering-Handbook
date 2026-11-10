@@ -1,0 +1,61 @@
+id,chapter,title,baseline_state,project_approval,evidence_anchors
+PK-0001,chapters/01_engineering_basis_and_codes.md,System boundary and design basis,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0002,chapters/01_engineering_basis_and_codes.md,Operating pressure versus design pressure,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0003,chapters/01_engineering_basis_and_codes.md,Pressure at an elevation change,BASELINE-RESEARCHED,NOT ASSESSED,EPA-MAIN
+PK-0004,chapters/01_engineering_basis_and_codes.md,Select the governing piping code,BASELINE-RESEARCHED,NOT ASSESSED,ASME-B31;B31.3;B31.1;B31.9;AWWA
+PK-0005,chapters/02_fluid_mechanics_and_sizing.md,Flow continuity and branch balance,BASELINE-RESEARCHED,NOT ASSESSED,HI-SYSTEM
+PK-0006,chapters/02_fluid_mechanics_and_sizing.md,Select diameter from hydraulic and economic limits,BASELINE-RESEARCHED,NOT ASSESSED,B36.10;HI-SYSTEM
+PK-0007,chapters/02_fluid_mechanics_and_sizing.md,Major and minor losses must both count,BASELINE-RESEARCHED,NOT ASSESSED,HI-SYSTEM
+PK-0008,chapters/02_fluid_mechanics_and_sizing.md,Hydraulic grade line versus energy grade line,BASELINE-RESEARCHED,NOT ASSESSED,HI-SYSTEM;EPA-MAIN
+PK-0009,chapters/03_pumps_and_suction_systems.md,Pump duty point is an intersection,BASELINE-RESEARCHED,NOT ASSESSED,HI-SYSTEM;HI-CURVES
+PK-0010,chapters/03_pumps_and_suction_systems.md,Available NPSH is a suction-system property,BASELINE-RESEARCHED,NOT ASSESSED,HI-NPSH;HI-DEFS
+PK-0011,chapters/03_pumps_and_suction_systems.md,Pump suction geometry affects flow quality,BASELINE-RESEARCHED,NOT ASSESSED,HI-FAQ;HI-NPSH
+PK-0012,chapters/03_pumps_and_suction_systems.md,Pumping power depends on total required head,BASELINE-RESEARCHED,NOT ASSESSED,HI-CURVES;HI-SYSTEM
+PK-0013,chapters/04_dimensions_flanges_fittings.md,Steel nominal size is not actual bore,BASELINE-RESEARCHED,NOT ASSESSED,B36.10
+PK-0014,chapters/04_dimensions_flanges_fittings.md,Fittings must match dimensional and material specification,BASELINE-RESEARCHED,NOT ASSESSED,B16.9;B31.3
+PK-0015,chapters/04_dimensions_flanges_fittings.md,Flange pressure class is temperature-dependent,BASELINE-RESEARCHED,NOT ASSESSED,B16.5
+PK-0016,chapters/04_dimensions_flanges_fittings.md,Gasket is part of the pressure boundary,BASELINE-RESEARCHED,NOT ASSESSED,B16.5;B31.3
+PK-0017,chapters/05_valves_and_protection.md,Valve function determines valve type,BASELINE-RESEARCHED,NOT ASSESSED,AWWA;EPA-VALVES
+PK-0018,chapters/05_valves_and_protection.md,Check-valve behavior must include transients,BASELINE-RESEARCHED,NOT ASSESSED,EPA-SURGE;EPA-MAIN
+PK-0019,chapters/05_valves_and_protection.md,Air-release and vacuum functions are different,BASELINE-RESEARCHED,NOT ASSESSED,AWWA;EPA-SURGE;EPA-MAIN
+PK-0020,chapters/05_valves_and_protection.md,Strainer location and fouling allowance,BASELINE-RESEARCHED,NOT ASSESSED,HI-FAQ;HI-NPSH
+PK-0021,chapters/06_routing_and_maintenance.md,Routing must consider constructability,BASELINE-RESEARCHED,NOT ASSESSED,SWAGE;B31.3
+PK-0022,chapters/06_routing_and_maintenance.md,High points can trap gas,BASELINE-RESEARCHED,NOT ASSESSED,EPA-MAIN;AWWA
+PK-0023,chapters/06_routing_and_maintenance.md,Low points may retain liquid or solids,BASELINE-RESEARCHED,NOT ASSESSED,EPA-MAIN;B31.3
+PK-0024,chapters/06_routing_and_maintenance.md,Maintainable valves need a human envelope,BASELINE-RESEARCHED,NOT ASSESSED,SWAGE
+PK-0025,chapters/07_equipment_loads_and_supports.md,Equipment nozzles are not pipe supports,BASELINE-RESEARCHED,NOT ASSESSED,EXP;B31.3
+PK-0026,chapters/07_equipment_loads_and_supports.md,Support types define restraints,BASELINE-RESEARCHED,NOT ASSESSED,EXP
+PK-0027,chapters/07_equipment_loads_and_supports.md,"Span depends on weight, stiffness and service",BASELINE-RESEARCHED,NOT ASSESSED,EXP
+PK-0028,chapters/07_equipment_loads_and_supports.md,Thermal expansion needs a movement path,BASELINE-RESEARCHED,NOT ASSESSED,EXP;B31.3
+PK-0029,chapters/08_expansion_testing_loads_and_pressure.md,Bellows create pressure thrust,BASELINE-RESEARCHED,NOT ASSESSED,EXP
+PK-0030,chapters/08_expansion_testing_loads_and_pressure.md,Hydrotest changes support loading,BASELINE-RESEARCHED,NOT ASSESSED,B31.3;EXP
+PK-0031,chapters/08_expansion_testing_loads_and_pressure.md,Pipe wall sizing is not just pressure,BASELINE-RESEARCHED,NOT ASSESSED,B31.3;B36.10
+PK-0032,chapters/08_expansion_testing_loads_and_pressure.md,Flexibility matters more than minimum length,BASELINE-RESEARCHED,NOT ASSESSED,EXP;B31.3
+PK-0033,chapters/09_structural_and_dynamic_response.md,Anchors transmit loads to structures,BASELINE-RESEARCHED,NOT ASSESSED,EXP
+PK-0034,chapters/09_structural_and_dynamic_response.md,Water hammer is a dynamic phenomenon,BASELINE-RESEARCHED,NOT ASSESSED,EPA-SURGE;EPA-MAIN
+PK-0035,chapters/09_structural_and_dynamic_response.md,Vibration requires source diagnosis,BASELINE-RESEARCHED,NOT ASSESSED,HI-NPSH;EXP
+PK-0036,chapters/09_structural_and_dynamic_response.md,Corrosion mechanism depends on environment,BASELINE-RESEARCHED,NOT ASSESSED,AWWA;B31.3
+PK-0037,chapters/10_materials_and_fabrication.md,Galvanic compatibility is a system property,BASELINE-RESEARCHED,NOT ASSESSED,AWWA
+PK-0038,chapters/10_materials_and_fabrication.md,Water treatment piping must consider chemistry,BASELINE-RESEARCHED,NOT ASSESSED,AWWA;B31.3
+PK-0039,chapters/10_materials_and_fabrication.md,Plastic pipe design differs from steel,BASELINE-RESEARCHED,NOT ASSESSED,AWWA
+PK-0040,chapters/10_materials_and_fabrication.md,Welding quality begins at the specification,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0041,chapters/11_fabrication_and_quality.md,Fabrication tolerance affects fit-up,BASELINE-RESEARCHED,NOT ASSESSED,SWAGE;B31.3
+PK-0042,chapters/11_fabrication_and_quality.md,Flanged joints require controlled assembly,BASELINE-RESEARCHED,NOT ASSESSED,B16.5;B31.3
+PK-0043,chapters/11_fabrication_and_quality.md,Pressure testing needs a test boundary,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0044,chapters/11_fabrication_and_quality.md,Commissioning is not simply filling a pipe,BASELINE-RESEARCHED,NOT ASSESSED,HI-NPSH;EPA-MAIN
+PK-0045,chapters/12_insulation_drawings_and_specification.md,Insulation can conceal corrosion and defects,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0046,chapters/12_insulation_drawings_and_specification.md,"P&ID is functional, model is spatial",BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0047,chapters/12_insulation_drawings_and_specification.md,Line class links design to procurement,BASELINE-RESEARCHED,NOT ASSESSED,B31.3;B16.5;B16.9
+PK-0048,chapters/12_insulation_drawings_and_specification.md,Isometric is a manufacturing deliverable,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0049,chapters/13_support_details_and_change_control.md,Support drawings need real structural context,BASELINE-RESEARCHED,NOT ASSESSED,EXP
+PK-0050,chapters/13_support_details_and_change_control.md,3D clash-checking must include operating states,BASELINE-RESEARCHED,NOT ASSESSED,EXP;SWAGE
+PK-0051,chapters/13_support_details_and_change_control.md,Piping changes need a formal review chain,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0052,chapters/13_support_details_and_change_control.md,Equipment isolation must be maintainable,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0053,chapters/14_instrumentation_and_plant_operations.md,Instrument taps alter local performance,BASELINE-RESEARCHED,NOT ASSESSED,AWWA
+PK-0054,chapters/14_instrumentation_and_plant_operations.md,Filter vessels require pressure-drop allowance,BASELINE-RESEARCHED,NOT ASSESSED,HI-SYSTEM
+PK-0055,chapters/14_instrumentation_and_plant_operations.md,A bypass is not free extra functionality,BASELINE-RESEARCHED,NOT ASSESSED,EPA-VALVES;HI-SYSTEM
+PK-0056,chapters/14_instrumentation_and_plant_operations.md,Pressure relief is a system decision,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0057,chapters/15_validation_and_failure_learning.md,Hydrotest may not reveal all failure modes,BASELINE-RESEARCHED,NOT ASSESSED,B31.3
+PK-0058,chapters/15_validation_and_failure_learning.md,Failure analysis starts with evidence,BASELINE-RESEARCHED,NOT ASSESSED,HI-NPSH;EXP
+PK-0059,chapters/15_validation_and_failure_learning.md,Temporary and abnormal conditions govern surprises,BASELINE-RESEARCHED,NOT ASSESSED,B31.3;EPA-MAIN
+PK-0060,chapters/15_validation_and_failure_learning.md,"Closeout requires accepted evidence, not confidence",BASELINE-RESEARCHED,NOT ASSESSED,B31.3

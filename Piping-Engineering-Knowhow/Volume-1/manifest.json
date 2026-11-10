@@ -1,0 +1,529 @@
+{
+  "title": "Piping Engineering Know-How Encyclopedia — Volume 1",
+  "version": "1.0.0",
+  "date": "2026-11-10",
+  "coverage": "60 discrete entries in 15 chapters",
+  "baseline_state": "BASELINE-RESEARCHED",
+  "engineering_approval": "NOT ASSESSED",
+  "entry_count": 60,
+  "entries": [
+    {
+      "id": "PK-0001",
+      "title": "System boundary and design basis",
+      "file": "chapters/01_engineering_basis_and_codes.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0002",
+      "title": "Operating pressure versus design pressure",
+      "file": "chapters/01_engineering_basis_and_codes.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0003",
+      "title": "Pressure at an elevation change",
+      "file": "chapters/01_engineering_basis_and_codes.md",
+      "refs": [
+        "EPA-MAIN"
+      ]
+    },
+    {
+      "id": "PK-0004",
+      "title": "Select the governing piping code",
+      "file": "chapters/01_engineering_basis_and_codes.md",
+      "refs": [
+        "ASME-B31",
+        "B31.3",
+        "B31.1",
+        "B31.9",
+        "AWWA"
+      ]
+    },
+    {
+      "id": "PK-0005",
+      "title": "Flow continuity and branch balance",
+      "file": "chapters/02_fluid_mechanics_and_sizing.md",
+      "refs": [
+        "HI-SYSTEM"
+      ]
+    },
+    {
+      "id": "PK-0006",
+      "title": "Select diameter from hydraulic and economic limits",
+      "file": "chapters/02_fluid_mechanics_and_sizing.md",
+      "refs": [
+        "B36.10",
+        "HI-SYSTEM"
+      ]
+    },
+    {
+      "id": "PK-0007",
+      "title": "Major and minor losses must both count",
+      "file": "chapters/02_fluid_mechanics_and_sizing.md",
+      "refs": [
+        "HI-SYSTEM"
+      ]
+    },
+    {
+      "id": "PK-0008",
+      "title": "Hydraulic grade line versus energy grade line",
+      "file": "chapters/02_fluid_mechanics_and_sizing.md",
+      "refs": [
+        "HI-SYSTEM",
+        "EPA-MAIN"
+      ]
+    },
+    {
+      "id": "PK-0009",
+      "title": "Pump duty point is an intersection",
+      "file": "chapters/03_pumps_and_suction_systems.md",
+      "refs": [
+        "HI-SYSTEM",
+        "HI-CURVES"
+      ]
+    },
+    {
+      "id": "PK-0010",
+      "title": "Available NPSH is a suction-system property",
+      "file": "chapters/03_pumps_and_suction_systems.md",
+      "refs": [
+        "HI-NPSH",
+        "HI-DEFS"
+      ]
+    },
+    {
+      "id": "PK-0011",
+      "title": "Pump suction geometry affects flow quality",
+      "file": "chapters/03_pumps_and_suction_systems.md",
+      "refs": [
+        "HI-FAQ",
+        "HI-NPSH"
+      ]
+    },
+    {
+      "id": "PK-0012",
+      "title": "Pumping power depends on total required head",
+      "file": "chapters/03_pumps_and_suction_systems.md",
+      "refs": [
+        "HI-CURVES",
+        "HI-SYSTEM"
+      ]
+    },
+    {
+      "id": "PK-0013",
+      "title": "Steel nominal size is not actual bore",
+      "file": "chapters/04_dimensions_flanges_fittings.md",
+      "refs": [
+        "B36.10"
+      ]
+    },
+    {
+      "id": "PK-0014",
+      "title": "Fittings must match dimensional and material specification",
+      "file": "chapters/04_dimensions_flanges_fittings.md",
+      "refs": [
+        "B16.9",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0015",
+      "title": "Flange pressure class is temperature-dependent",
+      "file": "chapters/04_dimensions_flanges_fittings.md",
+      "refs": [
+        "B16.5"
+      ]
+    },
+    {
+      "id": "PK-0016",
+      "title": "Gasket is part of the pressure boundary",
+      "file": "chapters/04_dimensions_flanges_fittings.md",
+      "refs": [
+        "B16.5",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0017",
+      "title": "Valve function determines valve type",
+      "file": "chapters/05_valves_and_protection.md",
+      "refs": [
+        "AWWA",
+        "EPA-VALVES"
+      ]
+    },
+    {
+      "id": "PK-0018",
+      "title": "Check-valve behavior must include transients",
+      "file": "chapters/05_valves_and_protection.md",
+      "refs": [
+        "EPA-SURGE",
+        "EPA-MAIN"
+      ]
+    },
+    {
+      "id": "PK-0019",
+      "title": "Air-release and vacuum functions are different",
+      "file": "chapters/05_valves_and_protection.md",
+      "refs": [
+        "AWWA",
+        "EPA-SURGE",
+        "EPA-MAIN"
+      ]
+    },
+    {
+      "id": "PK-0020",
+      "title": "Strainer location and fouling allowance",
+      "file": "chapters/05_valves_and_protection.md",
+      "refs": [
+        "HI-FAQ",
+        "HI-NPSH"
+      ]
+    },
+    {
+      "id": "PK-0021",
+      "title": "Routing must consider constructability",
+      "file": "chapters/06_routing_and_maintenance.md",
+      "refs": [
+        "SWAGE",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0022",
+      "title": "High points can trap gas",
+      "file": "chapters/06_routing_and_maintenance.md",
+      "refs": [
+        "EPA-MAIN",
+        "AWWA"
+      ]
+    },
+    {
+      "id": "PK-0023",
+      "title": "Low points may retain liquid or solids",
+      "file": "chapters/06_routing_and_maintenance.md",
+      "refs": [
+        "EPA-MAIN",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0024",
+      "title": "Maintainable valves need a human envelope",
+      "file": "chapters/06_routing_and_maintenance.md",
+      "refs": [
+        "SWAGE"
+      ]
+    },
+    {
+      "id": "PK-0025",
+      "title": "Equipment nozzles are not pipe supports",
+      "file": "chapters/07_equipment_loads_and_supports.md",
+      "refs": [
+        "EXP",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0026",
+      "title": "Support types define restraints",
+      "file": "chapters/07_equipment_loads_and_supports.md",
+      "refs": [
+        "EXP"
+      ]
+    },
+    {
+      "id": "PK-0027",
+      "title": "Span depends on weight, stiffness and service",
+      "file": "chapters/07_equipment_loads_and_supports.md",
+      "refs": [
+        "EXP"
+      ]
+    },
+    {
+      "id": "PK-0028",
+      "title": "Thermal expansion needs a movement path",
+      "file": "chapters/07_equipment_loads_and_supports.md",
+      "refs": [
+        "EXP",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0029",
+      "title": "Bellows create pressure thrust",
+      "file": "chapters/08_expansion_testing_loads_and_pressure.md",
+      "refs": [
+        "EXP"
+      ]
+    },
+    {
+      "id": "PK-0030",
+      "title": "Hydrotest changes support loading",
+      "file": "chapters/08_expansion_testing_loads_and_pressure.md",
+      "refs": [
+        "B31.3",
+        "EXP"
+      ]
+    },
+    {
+      "id": "PK-0031",
+      "title": "Pipe wall sizing is not just pressure",
+      "file": "chapters/08_expansion_testing_loads_and_pressure.md",
+      "refs": [
+        "B31.3",
+        "B36.10"
+      ]
+    },
+    {
+      "id": "PK-0032",
+      "title": "Flexibility matters more than minimum length",
+      "file": "chapters/08_expansion_testing_loads_and_pressure.md",
+      "refs": [
+        "EXP",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0033",
+      "title": "Anchors transmit loads to structures",
+      "file": "chapters/09_structural_and_dynamic_response.md",
+      "refs": [
+        "EXP"
+      ]
+    },
+    {
+      "id": "PK-0034",
+      "title": "Water hammer is a dynamic phenomenon",
+      "file": "chapters/09_structural_and_dynamic_response.md",
+      "refs": [
+        "EPA-SURGE",
+        "EPA-MAIN"
+      ]
+    },
+    {
+      "id": "PK-0035",
+      "title": "Vibration requires source diagnosis",
+      "file": "chapters/09_structural_and_dynamic_response.md",
+      "refs": [
+        "HI-NPSH",
+        "EXP"
+      ]
+    },
+    {
+      "id": "PK-0036",
+      "title": "Corrosion mechanism depends on environment",
+      "file": "chapters/09_structural_and_dynamic_response.md",
+      "refs": [
+        "AWWA",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0037",
+      "title": "Galvanic compatibility is a system property",
+      "file": "chapters/10_materials_and_fabrication.md",
+      "refs": [
+        "AWWA"
+      ]
+    },
+    {
+      "id": "PK-0038",
+      "title": "Water treatment piping must consider chemistry",
+      "file": "chapters/10_materials_and_fabrication.md",
+      "refs": [
+        "AWWA",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0039",
+      "title": "Plastic pipe design differs from steel",
+      "file": "chapters/10_materials_and_fabrication.md",
+      "refs": [
+        "AWWA"
+      ]
+    },
+    {
+      "id": "PK-0040",
+      "title": "Welding quality begins at the specification",
+      "file": "chapters/10_materials_and_fabrication.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0041",
+      "title": "Fabrication tolerance affects fit-up",
+      "file": "chapters/11_fabrication_and_quality.md",
+      "refs": [
+        "SWAGE",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0042",
+      "title": "Flanged joints require controlled assembly",
+      "file": "chapters/11_fabrication_and_quality.md",
+      "refs": [
+        "B16.5",
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0043",
+      "title": "Pressure testing needs a test boundary",
+      "file": "chapters/11_fabrication_and_quality.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0044",
+      "title": "Commissioning is not simply filling a pipe",
+      "file": "chapters/11_fabrication_and_quality.md",
+      "refs": [
+        "HI-NPSH",
+        "EPA-MAIN"
+      ]
+    },
+    {
+      "id": "PK-0045",
+      "title": "Insulation can conceal corrosion and defects",
+      "file": "chapters/12_insulation_drawings_and_specification.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0046",
+      "title": "P&ID is functional, model is spatial",
+      "file": "chapters/12_insulation_drawings_and_specification.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0047",
+      "title": "Line class links design to procurement",
+      "file": "chapters/12_insulation_drawings_and_specification.md",
+      "refs": [
+        "B31.3",
+        "B16.5",
+        "B16.9"
+      ]
+    },
+    {
+      "id": "PK-0048",
+      "title": "Isometric is a manufacturing deliverable",
+      "file": "chapters/12_insulation_drawings_and_specification.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0049",
+      "title": "Support drawings need real structural context",
+      "file": "chapters/13_support_details_and_change_control.md",
+      "refs": [
+        "EXP"
+      ]
+    },
+    {
+      "id": "PK-0050",
+      "title": "3D clash-checking must include operating states",
+      "file": "chapters/13_support_details_and_change_control.md",
+      "refs": [
+        "EXP",
+        "SWAGE"
+      ]
+    },
+    {
+      "id": "PK-0051",
+      "title": "Piping changes need a formal review chain",
+      "file": "chapters/13_support_details_and_change_control.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0052",
+      "title": "Equipment isolation must be maintainable",
+      "file": "chapters/13_support_details_and_change_control.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0053",
+      "title": "Instrument taps alter local performance",
+      "file": "chapters/14_instrumentation_and_plant_operations.md",
+      "refs": [
+        "AWWA"
+      ]
+    },
+    {
+      "id": "PK-0054",
+      "title": "Filter vessels require pressure-drop allowance",
+      "file": "chapters/14_instrumentation_and_plant_operations.md",
+      "refs": [
+        "HI-SYSTEM"
+      ]
+    },
+    {
+      "id": "PK-0055",
+      "title": "A bypass is not free extra functionality",
+      "file": "chapters/14_instrumentation_and_plant_operations.md",
+      "refs": [
+        "EPA-VALVES",
+        "HI-SYSTEM"
+      ]
+    },
+    {
+      "id": "PK-0056",
+      "title": "Pressure relief is a system decision",
+      "file": "chapters/14_instrumentation_and_plant_operations.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0057",
+      "title": "Hydrotest may not reveal all failure modes",
+      "file": "chapters/15_validation_and_failure_learning.md",
+      "refs": [
+        "B31.3"
+      ]
+    },
+    {
+      "id": "PK-0058",
+      "title": "Failure analysis starts with evidence",
+      "file": "chapters/15_validation_and_failure_learning.md",
+      "refs": [
+        "HI-NPSH",
+        "EXP"
+      ]
+    },
+    {
+      "id": "PK-0059",
+      "title": "Temporary and abnormal conditions govern surprises",
+      "file": "chapters/15_validation_and_failure_learning.md",
+      "refs": [
+        "B31.3",
+        "EPA-MAIN"
+      ]
+    },
+    {
+      "id": "PK-0060",
+      "title": "Closeout requires accepted evidence, not confidence",
+      "file": "chapters/15_validation_and_failure_learning.md",
+      "refs": [
+        "B31.3"
+      ]
+    }
+  ]
+}
